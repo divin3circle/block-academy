@@ -26,7 +26,26 @@ const onboarding = () => {
         onSkip={handleDone}
         bottomBarHighlight={false}
         DoneButtonComponent={() => (
-          <TouchableOpacity onPress={handleDone}>Register</TouchableOpacity>
+          <TouchableOpacity
+            onPress={handleDone}
+            style={{
+              paddingHorizontal: 20,
+              paddingVertical: 10,
+              backgroundColor: Colors.light.primary,
+              borderRadius: 10,
+              marginHorizontal: 15,
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "WorkSansBold",
+                fontSize: 16,
+                color: Colors.light.tint,
+              }}
+            >
+              Register
+            </Text>
+          </TouchableOpacity>
         )}
         containerStyles={{ paddingHorizontal: 15 }}
         pages={[
