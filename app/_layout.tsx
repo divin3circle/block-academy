@@ -40,6 +40,12 @@ export default function RootLayout() {
           title: "Onboarding",
         }}
       />
+      <Stack.Screen
+        name="signin"
+        options={{
+          title: "Signin",
+        }}
+      />
     </Stack>
   );
 }

@@ -27,7 +27,7 @@ export default function Index() {
         style={{
           fontSize: 34,
           fontFamily: "WorkSansSemibold",
-          width: width * 0.7,
+          width: width * 0.8,
         }}
       >
         Welcome to
@@ -36,7 +36,7 @@ export default function Index() {
         style={{
           fontSize: 34,
           fontFamily: "WorkSansSemibold",
-          width: width * 0.7,
+          width: width * 0.8,
           marginTop: 5,
         }}
       >
@@ -46,8 +46,9 @@ export default function Index() {
         style={{
           fontSize: 20,
           fontFamily: "WorkSansRegular",
-          width: width * 0.7,
+          width: width * 0.8,
           marginTop: 20,
+          lineHeight: 30,
         }}
       >
         Experience the future of education with smart tutoring, interactive
