@@ -17,7 +17,7 @@ const onboarding = () => {
   const router = useRouter();
 
   const handleDone = () => {
-    router.push("/sigin");
+    router.push("/signin");
   };
   return (
     <View style={styles.container}>
