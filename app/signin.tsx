@@ -1,13 +1,25 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React, { useState } from "react";
 import Lottie from "lottie-react-native";
 import { Colors } from "@/constants/colors";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import FontAwesome6 from "@expo/vector-icons/build/FontAwesome6";
 import FontAwesome from "@expo/vector-icons/build/FontAwesome";
+import { useLoginWithEmail } from "@privy-io/expo";
+import { useRouter } from "expo-router";
+
+const { width, height } = Dimensions.get("window");
 
 const sigin = () => {
+  const [email, setEmail] = useState("");
+  const router = useRouter();
+  const { sendCode } = useLoginWithEmail();
   return (
     <View style={styles.container}>
       <Lottie
@@ -15,8 +27,8 @@ const sigin = () => {
         autoPlay
         loop
         style={{
-          width: 300,
-          height: 400,
+          width: width * 0.9,
+          height: width,
         }}
       />
       <Text
@@ -36,18 +48,49 @@ const sigin = () => {
       >
         Use your email to authenticate into Block Academy
       </Text>
-      <TouchableOpacity style={styles.btn}>
-        <Text
-          style={{
-            fontFamily: "WorkSansSemibold",
-            fontSize: 16,
-            color: Colors.light.tint,
-          }}
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          width: width * 0.9,
+        }}
+      >
+        <TouchableOpacity
+          style={[
+            styles.btn,
+            {
+              backgroundColor: "#f6f7f8",
+              borderWidth: 1,
+              borderColor: Colors.light.tint,
+            },
+          ]}
+          onPress={() => router.navigate("/new-login")}
         >
-          Email sign in
-        </Text>
-        <AntDesign name="google" size={16} color="#E8F1FF" />
-      </TouchableOpacity>
+          <Text
+            style={{
+              fontFamily: "WorkSansSemibold",
+              fontSize: 16,
+              color: "#000",
+            }}
+          >
+            Log In
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => router.navigate("/login")}
+        >
+          <Text
+            style={{
+              fontFamily: "WorkSansSemibold",
+              fontSize: 16,
+              color: Colors.light.tint,
+            }}
+          >
+            Sign Up
+          </Text>
+        </TouchableOpacity>
+      </View>
       <Text
         style={{
           fontFamily: "WorkSansSemibold",
@@ -86,7 +129,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.tint,
   },
   btn: {
-    width: 200,
+    width: 150,
     height: 50,
     backgroundColor: Colors.light.primary,
     textAlign: "center",

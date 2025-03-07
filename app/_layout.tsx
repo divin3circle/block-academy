@@ -1,5 +1,5 @@
 import { useFonts } from "expo-font";
-import { Stack, useRouter } from "expo-router";
+import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { PrivyProvider } from "@privy-io/expo";
 import { useEffect } from "react";
@@ -8,7 +8,6 @@ import "react-native-reanimated";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const router = useRouter();
   const [loaded] = useFonts({
     WorkSansRegular: require("../assets/fonts/WorkSans-Regular.ttf"),
     WorkSansBold: require("../assets/fonts/WorkSans-Bold.ttf"),
@@ -48,6 +47,28 @@ export default function RootLayout() {
           options={{
             title: "Signin",
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="login"
+          options={{
+            title: "Login",
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="create-wallet"
+          options={{
+            title: "Create Wallet",
+            headerShown: true,
+          }}
+        />
+        <Stack.Screen
+          name="new-login"
+          options={{
+            title: "Glad to see you back",
+            headerShown: true,
+            presentation: "modal",
           }}
         />
       </Stack>

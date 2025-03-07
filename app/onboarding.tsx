@@ -42,7 +42,7 @@ const onboarding = () => {
                 color: Colors.light.tint,
               }}
             >
-              Register
+              Get started
             </Text>
           </TouchableOpacity>
         )}
