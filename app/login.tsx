@@ -97,7 +97,6 @@ export default function login() {
             height: 50,
             borderRadius: 10,
             padding: 10,
-
             borderColor: Colors.light.tint,
             borderWidth: 1,
             fontFamily: "WorkSansRegular",
@@ -112,7 +111,7 @@ export default function login() {
           >
             <Text
               style={{
-                fontFamily: "WorkSansRegular",
+                fontFamily: "WorkSansSemibold",
                 textAlign: "center",
                 color: Colors.light.tint,
               }}

@@ -4,7 +4,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { PrivyProvider } from "@privy-io/expo";
 import { useEffect } from "react";
 import "react-native-reanimated";
-
+import openCampusChain from "@/constants/chains";
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -27,6 +27,14 @@ export default function RootLayout() {
     <PrivyProvider
       appId={"cm7xkvtk000nu8c9wxq0s55mk"}
       clientId={"client-WY5hBzBMEHsuoW457P3Kh2D6EPKjRSpqeWwEkwaixG5TQ"}
+      config={{
+        embedded: {
+          ethereum: {
+            createOnLogin: "all-users",
+          },
+        },
+      }}
+      supportedChains={[openCampusChain]}
     >
       <Stack>
         <Stack.Screen
