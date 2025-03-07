@@ -30,10 +30,9 @@ const onboarding = () => {
             onPress={handleDone}
             style={{
               paddingHorizontal: 20,
-              paddingVertical: 10,
-              backgroundColor: Colors.light.primary,
+              paddingVertical: 5,
               borderRadius: 10,
-              marginHorizontal: 15,
+              marginHorizontal: 5,
             }}
           >
             <Text

@@ -47,6 +47,7 @@ export default function RootLayout() {
           name="signin"
           options={{
             title: "Signin",
+            headerShown: false,
           }}
         />
       </Stack>
