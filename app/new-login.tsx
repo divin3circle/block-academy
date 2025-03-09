@@ -11,7 +11,7 @@ import { useLoginWithEmail } from "@privy-io/expo";
 import { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors } from "@/constants/colors";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import ToastManager, { Toast } from "toastify-react-native";
 
 export default function ExistingUser() {
@@ -24,7 +24,7 @@ export default function ExistingUser() {
   const { state, sendCode, loginWithCode } = useLoginWithEmail({
     onLoginSuccess(user, isNewUser) {
       console.log("Logged in", user, isNewUser);
-      router.navigate("/create-wallet");
+      router.navigate("/create-profile");
     },
   });
 
@@ -80,6 +80,7 @@ export default function ExistingUser() {
       <TouchableOpacity onPress={() => logout()}>
         <Text>LOGOUT</Text>
       </TouchableOpacity>
+      <Link href="/create-profile">Create Profile</Link>
       <View>
         <Text
           style={{

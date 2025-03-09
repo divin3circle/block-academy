@@ -5,6 +5,9 @@ import { PrivyProvider } from "@privy-io/expo";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import openCampusChain from "@/constants/chains";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -36,50 +39,51 @@ export default function RootLayout() {
       }}
       supportedChains={[openCampusChain]}
     >
-      <Stack>
-        <Stack.Screen
-          name="index"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="onboarding"
-          options={{
-            title: "Onboarding",
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="signin"
-          options={{
-            title: "Signin",
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="login"
-          options={{
-            title: "Login",
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="create-wallet"
-          options={{
-            title: "Create Wallet",
-            headerShown: true,
-          }}
-        />
-        <Stack.Screen
-          name="new-login"
-          options={{
-            title: "Glad to see you back",
-            headerShown: true,
-            presentation: "modal",
-          }}
-        />
-      </Stack>
+      <QueryClientProvider client={queryClient}>
+        <Stack>
+          <Stack.Screen
+            name="index"
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="onboarding"
+            options={{
+              title: "Onboarding",
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="signin"
+            options={{
+              title: "Signin",
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="login"
+            options={{
+              title: "Login",
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="create-profile"
+            options={{
+              title: "Create Profile",
+              headerShown: true,
+            }}
+          />
+          <Stack.Screen
+            name="new-login"
+            options={{
+              title: "Glad to see you back",
+              headerShown: true,
+            }}
+          />
+        </Stack>
+      </QueryClientProvider>
     </PrivyProvider>
   );
 }

@@ -23,7 +23,7 @@ export default function login() {
   const { state, sendCode, loginWithCode } = useLoginWithEmail({
     onLoginSuccess(user, isNewUser) {
       console.log("Logged in", user, isNewUser);
-      router.navigate("/create-wallet");
+      router.navigate("/create-profile");
     },
   });
 
