@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/colors";
+import { Link } from "expo-router";
 // import { Image } from "expo-image";
 
 const { width, height } = Dimensions.get("window");
@@ -82,6 +83,16 @@ const SuccessCard = ({ loading }: { loading?: boolean }) => {
             style={{ marginTop: 20 }}
           />
         )}
+        <Link
+          href={"/"}
+          style={{
+            fontFamily: "WorkSansRegular",
+            fontSize: 14,
+            color: Colors.light.muted,
+          }}
+        >
+          Dashboard
+        </Link>
       </View>
     </View>
   );
