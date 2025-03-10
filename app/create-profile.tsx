@@ -22,6 +22,8 @@ const createProfile = () => {
     queryFn: () => fetchCountries(),
   });
   const [showModal, setShowModal] = React.useState(false);
+
+  // loading state below will be used to await user profile creation on the server
   const [loading, setLoading] = React.useState(false);
   const handleCreateProfile = () => {
     setShowModal(true);
@@ -29,7 +31,7 @@ const createProfile = () => {
   if (isLoading || !data) return <Text>Loading...</Text>;
   return (
     <SafeAreaView style={styles.container}>
-      <SuccessCard loading />
+      {!showModal && <SuccessCard loading />}
       <Text
         style={{
           fontFamily: "WorkSansSemibold",
@@ -140,6 +142,7 @@ const createProfile = () => {
                             height: 40,
                             objectFit: "contain",
                             borderRadius: 8,
+                            marginLeft: 60,
                           }}
                         />
                       )}

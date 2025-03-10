@@ -10,7 +10,6 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/colors";
 import { Link } from "expo-router";
-// import { Image } from "expo-image";
 
 const { width, height } = Dimensions.get("window");
 const SuccessCard = ({ loading }: { loading?: boolean }) => {
@@ -84,7 +83,7 @@ const SuccessCard = ({ loading }: { loading?: boolean }) => {
           />
         )}
         <Link
-          href={"/"}
+          href={"/(tabs)"}
           style={{
             fontFamily: "WorkSansRegular",
             fontSize: 14,

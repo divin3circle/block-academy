@@ -15,6 +15,7 @@ export default function RootLayout() {
     WorkSansRegular: require("../assets/fonts/WorkSans-Regular.ttf"),
     WorkSansBold: require("../assets/fonts/WorkSans-Bold.ttf"),
     WorkSansSemibold: require("../assets/fonts/WorkSans-SemiBold.ttf"),
+    WorkSansLight: require("../assets/fonts/WorkSans-Light.ttf"),
   });
 
   useEffect(() => {
@@ -41,6 +42,12 @@ export default function RootLayout() {
     >
       <QueryClientProvider client={queryClient}>
         <Stack>
+          <Stack.Screen
+            name="(tabs)"
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen
             name="index"
             options={{
