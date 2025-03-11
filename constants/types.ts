@@ -5,6 +5,8 @@
 export interface ProgressProps {
   value: number;
   width: number;
+  height?: number;
+  fillColor?: string;
 }
 
 interface Progress {

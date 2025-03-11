@@ -27,8 +27,9 @@ const Progress = () => {
                 fontSize: 16,
               }}
             >
-              My Progress
+              Rookie
             </Text>
+
             <Text
               style={{
                 fontFamily: "WorkSansSemibold",
@@ -39,6 +40,7 @@ const Progress = () => {
               322 XP
             </Text>
           </View>
+
           <CustomProgress
             progressDetails={{
               width: 250,

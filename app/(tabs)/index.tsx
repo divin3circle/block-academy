@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 import Progress from "@/components/home/progress";
 import Continue from "@/components/home/continue";
@@ -6,8 +6,10 @@ import Continue from "@/components/home/continue";
 const home = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Progress />
-      <Continue />
+      <ScrollView>
+        <Progress />
+        <Continue />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -15,5 +17,8 @@ const home = () => {
 export default home;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
 });

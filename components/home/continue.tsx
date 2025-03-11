@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import React from "react";
 import { spacing } from "@/constants/spacings";
 import ContinueLearnCard from "./ContinueLearnCard";
@@ -24,7 +24,15 @@ const Continue = () => {
       >
         What Would you like to learn Today?
       </Text>
-      <ContinueLearnCard continueLearningItem={continueLearningCourses[0]} />
+      <FlatList
+        data={continueLearningCourses}
+        renderItem={({ item }) => (
+          <ContinueLearnCard continueLearningItem={item} />
+        )}
+        keyExtractor={(item) => item.title}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+      />
     </View>
   );
 };

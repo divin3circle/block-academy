@@ -20,9 +20,9 @@ export const continueLearningCourses: ContinueLearning[] = [
   {
     title: "DeFi Essentials",
     units: 6,
-    bgColor: "#E8F5E9", // light green background
+    bgColor: "#D3E6D5FF", // light green background
     image: require("../assets/images/c3.webp"),
-    progress: { value: 80, color: "#8BC34A" }, // 80% progress, lime green indicator
+    progress: { value: 80, color: "#ECEF0EFF" }, // 80% progress, lime green indicator
     btnColor: "#00BCD4", // cyan button
   },
 ];

@@ -13,18 +13,20 @@ const CustomProgress = ({
     <View
       style={{
         width: progressDetails.width,
-        height: 10,
+        height: progressDetails.height ? progressDetails.height - 1 : 10,
         borderRadius: 14,
         backgroundColor: Colors.light.muted,
       }}
     >
       <View
         style={{
-          backgroundColor: Colors.light.primary,
+          backgroundColor: progressDetails.fillColor
+            ? progressDetails.fillColor
+            : Colors.light.primary,
           width: innerWidth,
-          height: 10,
+          height: progressDetails.height ? progressDetails.height : 10,
           borderRadius: 14,
-          borderColor: Colors.light.titles,
+          borderColor: "#000",
           borderWidth: 1,
         }}
       ></View>

@@ -25,6 +25,7 @@ const ContinueLearnCard = ({
         styles.container,
         {
           backgroundColor: continueLearningItem.bgColor,
+          marginHorizontal: 6,
         },
       ]}
     >
@@ -68,6 +69,8 @@ const ContinueLearnCard = ({
             progressDetails={{
               width: 200,
               value: continueLearningItem.progress.value,
+              fillColor: continueLearningItem.progress.color,
+              height: 10,
             }}
           />
         </View>
@@ -81,8 +84,8 @@ const ContinueLearnCard = ({
         >
           <Text
             style={{
-              fontFamily: "WorkSansRegular",
-              fontSize: 14,
+              fontFamily: "WorkSansSemibold",
+              fontSize: 16,
               marginVertical: 6,
               color: "#fff",
             }}
