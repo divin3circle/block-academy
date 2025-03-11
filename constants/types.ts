@@ -74,6 +74,7 @@ export interface Module {
  * @notice: interface for upcoming courses
  */
 export interface Course {
+  id: string;
   name: string;
   logo: string;
   enrolledUsers: number;

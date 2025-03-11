@@ -67,6 +67,7 @@ export const friends: Friend[] = [
 ];
 
 export const introToBlockchain: Course = {
+  id: "1",
   name: "Intro to Blockchain",
   logo: require("../assets/images/c1.webp"),
   enrolledUsers: 1200,
