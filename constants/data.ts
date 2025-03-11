@@ -1,4 +1,4 @@
-import { ContinueLearning } from "./types";
+import { ContinueLearning, Course, Friend } from "./types";
 
 export const continueLearningCourses: ContinueLearning[] = [
   {
@@ -25,4 +25,517 @@ export const continueLearningCourses: ContinueLearning[] = [
     progress: { value: 80, color: "#ECEF0EFF" }, // 80% progress, lime green indicator
     btnColor: "#00BCD4", // cyan button
   },
+];
+
+export const friends: Friend[] = [
+  {
+    name: "Lyle",
+    image: require("../assets/images/f1.avif"),
+  },
+  {
+    name: "Tasha",
+    image: require("../assets/images/f5.avif"),
+  },
+  {
+    name: "James",
+    image: require("../assets/images/f2.avif"),
+  },
+  {
+    name: "Kate",
+    image: require("../assets/images/f7.avif"),
+  },
+  {
+    name: "Moses",
+    image: require("../assets/images/f3.avif"),
+  },
+  {
+    name: "Rose",
+    image: require("../assets/images/f8.jpg"),
+  },
+  {
+    name: "Sylus",
+    image: require("../assets/images/f4.avif"),
+  },
+  {
+    name: "Lenny",
+    image: require("../assets/images/f6.avif"),
+  },
+  {
+    name: "Add",
+    image: require("../assets/images/plus.svg"),
+  },
+];
+
+export const introToBlockchain: Course = {
+  name: "Intro to Blockchain",
+  logo: require("../assets/images/c1.webp"),
+  enrolledUsers: 1200,
+  enrollmentFee: "FREE",
+  bountyPoints: 50,
+  rating: 4.5,
+  topic: "Blockchain",
+  bountyQuiz: [
+    {
+      name: "Blockchain Quiz 1",
+      maxPoints: 20,
+      questions: [
+        {
+          question: "What is a blockchain?",
+          context: "An overview of blockchain technology.",
+          image: require("../assets/images/blockchainquiz1.svg"),
+          answer: "A decentralized ledger",
+          options: [
+            { option: "A centralized database" },
+            { option: "A decentralized ledger" },
+            { option: "A type of network protocol" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Blockchain Quiz 2",
+      maxPoints: 20,
+      questions: [
+        {
+          question: "Which consensus mechanism is widely used?",
+          context: "Understanding consensus in blockchain.",
+          image: "",
+          answer: "Proof of Work",
+          options: [
+            { option: "Proof of Stake" },
+            { option: "Proof of Work" },
+            { option: "Proof of Concept" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Blockchain Quiz 3",
+      maxPoints: 20,
+      questions: [
+        {
+          question: "What ensures immutability in blockchain?",
+          context: "Learn how data integrity is maintained.",
+          image: "https://example.com/images/quiz3_q.png",
+          answer: "Cryptographic hashing",
+          options: [
+            { option: "Data replication" },
+            { option: "Cryptographic hashing" },
+            { option: "Consensus protocols" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Blockchain Quiz 4",
+      maxPoints: 20,
+      questions: [
+        {
+          question: "Which of these is a blockchain use-case?",
+          context: "Examples of real-world blockchain applications.",
+          image: "https://example.com/images/quiz4_q.png",
+          answer: "Supply chain management",
+          options: [
+            { option: "Social media networking" },
+            { option: "Supply chain management" },
+            { option: "Cloud storage" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Blockchain Quiz 5",
+      maxPoints: 20,
+      questions: [
+        {
+          question: "What is a smart contract?",
+          context: "Understanding self-executing agreements.",
+          image: "https://example.com/images/quiz5_q.png",
+          answer:
+            "A self-executing contract with the terms directly written into code",
+          options: [
+            { option: "A legal paper contract" },
+            {
+              option:
+                "A self-executing contract with the terms directly written into code",
+            },
+            { option: "A digital signature" },
+          ],
+        },
+      ],
+    },
+  ],
+  // Five modules, each with five slides
+  modules: [
+    {
+      name: "Module 1: Fundamentals",
+      bannerImage: require("../assets/images/blockchainquiz1.svg"),
+      about: "Get introduced to the core concepts of blockchain technology.",
+      slides: [
+        {
+          title: "Slide 1: What is Blockchain?",
+          summary: "A basic definition of blockchain technology.",
+          content: [
+            {
+              introductionParagraph:
+                "Blockchain is a decentralized ledger that records transactions securely.",
+              exampleImage: require("../assets/images/blockchainbasics.webp"),
+              AdditionalParagraph:
+                "This slide covers the basic definition and importance of decentralization.",
+            },
+          ],
+        },
+        {
+          title: "Slide 2: Components of Blockchain",
+          summary: "Learn about blocks, chains, and nodes.",
+          content: [
+            {
+              introductionParagraph:
+                "Blocks store data, and chains link blocks using cryptography.",
+              exampleImage: require("../assets/images/componentsofblockchain.svg"),
+              AdditionalParagraph:
+                "Nodes in a network help verify and store blockchain data.",
+            },
+          ],
+        },
+        {
+          title: "Slide 3: Decentralization Explained",
+          summary: "Understand the concept of decentralization.",
+          content: [
+            {
+              introductionParagraph:
+                "Decentralization removes the need for a central authority.",
+              exampleImage: require("../assets/images/decentralization.svg"),
+              AdditionalParagraph:
+                "This ensures that no single entity controls the entire network.",
+            },
+          ],
+        },
+        {
+          title: "Slide 4: Security through Cryptography",
+          summary: "Explore how cryptography secures blockchain data.",
+          content: [
+            {
+              introductionParagraph:
+                "Cryptographic techniques secure data integrity and authenticity.",
+              exampleImage: require("../assets/images/security.webp"),
+              AdditionalParagraph:
+                "This slide introduces hash functions and digital signatures.",
+            },
+          ],
+        },
+        {
+          title: "Slide 5: Blockchain Benefits",
+          summary: "Review the key benefits of using blockchain.",
+          content: [
+            {
+              introductionParagraph:
+                "Blockchain offers transparency, security, and traceability.",
+              exampleImage: require("../assets/images/c1.webp"),
+              AdditionalParagraph:
+                "These benefits drive its adoption across various industries.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Module 2: Key Concepts",
+      bannerImage: require("../assets/images/keyconcepts.png"),
+      about: "Dive deeper into the key technical concepts behind blockchain.",
+      slides: [
+        {
+          title: "Slide 1: Consensus Mechanisms",
+          summary: "Understand how consensus is achieved in a network.",
+          content: [
+            {
+              introductionParagraph:
+                "Consensus mechanisms ensure all nodes agree on the blockchain state.",
+              exampleImage: require("../assets/images/consensus.webp"),
+              AdditionalParagraph:
+                "Examples include Proof of Work and Proof of Stake.",
+            },
+          ],
+        },
+        {
+          title: "Slide 2: Smart Contracts",
+          summary: "Learn what smart contracts are and how they function.",
+          content: [
+            {
+              introductionParagraph:
+                "Smart contracts are self-executing agreements coded on the blockchain.",
+              exampleImage: require("../assets/images/smartcontract.webp"),
+              AdditionalParagraph:
+                "They automatically enforce and execute contract terms.",
+            },
+          ],
+        },
+        {
+          title: "Slide 3: Tokenization",
+          summary: "Explore the process of tokenizing assets on a blockchain.",
+          content: [
+            {
+              introductionParagraph:
+                "Tokenization converts physical and digital assets into tradable tokens.",
+              exampleImage: require("../assets/images/tokenization.webp"),
+              AdditionalParagraph:
+                "It enables fractional ownership and liquidity in new markets.",
+            },
+          ],
+        },
+        {
+          title: "Slide 4: Public vs. Private Blockchains",
+          summary:
+            "Compare the differences between public and private blockchains.",
+          content: [
+            {
+              introductionParagraph:
+                "Public blockchains are open to anyone, while private ones restrict access.",
+              exampleImage: require("../assets/images/publicblockchain.webp"),
+              AdditionalParagraph:
+                "Each type offers different levels of security and control.",
+            },
+          ],
+        },
+        {
+          title: "Slide 5: Scalability Challenges",
+          summary: "Discuss the scalability issues facing blockchain networks.",
+          content: [
+            {
+              introductionParagraph:
+                "Scalability remains a challenge as networks grow.",
+              exampleImage: require("../assets/images/keyconcepts.png"),
+              AdditionalParagraph:
+                "Solutions like sharding and layer-two protocols are being developed.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Module 3: Practical Applications",
+      bannerImage: require("../assets/images/practical.webp"),
+      about: "See how blockchain is applied in various real-world scenarios.",
+      slides: [
+        {
+          title: "Slide 1: Supply Chain Management",
+          summary: "Learn how blockchain enhances supply chain transparency.",
+          content: [
+            {
+              introductionParagraph:
+                "Blockchain can track products from origin to consumer.",
+              exampleImage: require("../assets/images/supply.webp"),
+              AdditionalParagraph:
+                "This improves transparency and reduces fraud.",
+            },
+          ],
+        },
+        {
+          title: "Slide 2: Finance and Payments",
+          summary: "Discover blockchain applications in finance.",
+          content: [
+            {
+              introductionParagraph:
+                "Blockchain enables faster, cheaper cross-border payments.",
+              exampleImage: require("../assets/images/payments.webp"),
+              AdditionalParagraph:
+                "It also underpins cryptocurrencies and digital assets.",
+            },
+          ],
+        },
+        {
+          title: "Slide 3: Healthcare",
+          summary: "Explore how blockchain secures medical records.",
+          content: [
+            {
+              introductionParagraph:
+                "Blockchain ensures that patient data remains secure and tamper-proof.",
+              exampleImage: require("../assets/images/health.webp"),
+              AdditionalParagraph:
+                "It can also streamline billing and insurance processes.",
+            },
+          ],
+        },
+        {
+          title: "Slide 4: Digital Identity",
+          summary:
+            "Understand blockchain's role in managing digital identities.",
+          content: [
+            {
+              introductionParagraph:
+                "Digital identity solutions on blockchain provide secure authentication.",
+              exampleImage: require("../assets/images/identity.webp"),
+              AdditionalParagraph:
+                "They reduce identity theft and streamline verification.",
+            },
+          ],
+        },
+        {
+          title: "Slide 5: Voting Systems",
+          summary: "Examine how blockchain can enhance election security.",
+          content: [
+            {
+              introductionParagraph:
+                "Blockchain-based voting can ensure transparency and prevent fraud.",
+              exampleImage: require("../assets/images/vote.webp"),
+              AdditionalParagraph:
+                "It promotes trust in the electoral process through immutability.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Module 4: Security & Challenges",
+      bannerImage: require("../assets/images/securityandchallenges.webp"),
+      about:
+        "Examine the security challenges and potential solutions in blockchain.",
+      slides: [
+        {
+          title: "Slide 1: Cryptographic Security",
+          summary: "Learn how cryptography underpins blockchain security.",
+          content: [
+            {
+              introductionParagraph:
+                "Encryption and hashing secure data on the blockchain.",
+              exampleImage: require("../assets/images/cryptographic.webp"),
+              AdditionalParagraph:
+                "This is fundamental to ensuring data integrity and authenticity.",
+            },
+          ],
+        },
+        {
+          title: "Slide 2: Common Vulnerabilities",
+          summary: "Discuss potential vulnerabilities in blockchain systems.",
+          content: [
+            {
+              introductionParagraph:
+                "Understanding vulnerabilities like 51% attacks is key.",
+              exampleImage: require("../assets/images/vulnerability.webp"),
+              AdditionalParagraph:
+                "We also look at smart contract bugs and network attacks.",
+            },
+          ],
+        },
+        {
+          title: "Slide 3: Mitigation Strategies",
+          summary: "Explore strategies to mitigate security risks.",
+          content: [
+            {
+              introductionParagraph:
+                "Security audits and robust testing are critical.",
+              exampleImage: require("../assets/images/mitigate.webp"),
+              AdditionalParagraph:
+                "Layer-two solutions and consensus improvements also help.",
+            },
+          ],
+        },
+        {
+          title: "Slide 4: Regulatory Challenges",
+          summary: "Examine the regulatory landscape for blockchain.",
+          content: [
+            {
+              introductionParagraph:
+                "Regulations vary globally and can impact blockchain adoption.",
+              exampleImage: require("../assets/images/regulation.webp"),
+              AdditionalParagraph:
+                "Understanding compliance is crucial for mainstream use.",
+            },
+          ],
+        },
+        {
+          title: "Slide 5: Future Security Innovations",
+          summary: "Look at upcoming innovations in blockchain security.",
+          content: [
+            {
+              introductionParagraph:
+                "New cryptographic techniques and protocols are emerging.",
+              exampleImage: require("../assets/images/future.webp"),
+              AdditionalParagraph:
+                "These innovations aim to further secure decentralized networks.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Module 5: Future Trends",
+      bannerImage: require("../assets/images/futureblockchain.webp"),
+      about:
+        "Explore the future potential and emerging trends in blockchain technology.",
+      slides: [
+        {
+          title: "Slide 1: Emerging Use Cases",
+          summary: "Discover new industries adopting blockchain.",
+          content: [
+            {
+              introductionParagraph:
+                "From IoT to renewable energy, blockchain is finding new applications.",
+              exampleImage: require("../assets/images/iot.webp"),
+              AdditionalParagraph:
+                "Innovation continues to drive blockchain adoption across sectors.",
+            },
+          ],
+        },
+        {
+          title: "Slide 2: Scalability Solutions",
+          summary: "Understand approaches to overcome scalability issues.",
+          content: [
+            {
+              introductionParagraph:
+                "Techniques like sharding and layer-two protocols are evolving.",
+              exampleImage: require("../assets/images/scalability.webp"),
+              AdditionalParagraph:
+                "These solutions aim to increase throughput and reduce fees.",
+            },
+          ],
+        },
+        {
+          title: "Slide 3: Interoperability",
+          summary: "Examine the importance of blockchain interoperability.",
+          content: [
+            {
+              introductionParagraph:
+                "Interoperability allows different blockchains to communicate.",
+              exampleImage: require("../assets/images/inter.svg"),
+              AdditionalParagraph:
+                "This can lead to more unified and efficient ecosystems.",
+            },
+          ],
+        },
+        {
+          title: "Slide 4: Institutional Adoption",
+          summary: "Look at how institutions are embracing blockchain.",
+          content: [
+            {
+              introductionParagraph:
+                "Banks, governments, and large corporations are exploring blockchain.",
+              exampleImage: require("../assets/images/banks.webp"),
+              AdditionalParagraph:
+                "Institutional backing could drive mainstream adoption.",
+            },
+          ],
+        },
+        {
+          title: "Slide 5: The Road Ahead",
+          summary: "A visionary look at the future of blockchain.",
+          content: [
+            {
+              introductionParagraph:
+                "Predicting future trends based on current technological advancements.",
+              exampleImage: require("../assets/images/c1.webp"),
+              AdditionalParagraph:
+                "This slide encapsulates the potential long-term impact of blockchain.",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+export const courses: Course[] = [
+  introToBlockchain,
+  introToBlockchain,
+  introToBlockchain,
 ];
