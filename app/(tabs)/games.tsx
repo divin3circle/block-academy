@@ -125,7 +125,7 @@ const games = () => {
               transition={1000}
               style={{
                 width: 300,
-                height: 300,
+                height: 250,
               }}
             />
           </View>
