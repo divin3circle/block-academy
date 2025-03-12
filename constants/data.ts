@@ -1,4 +1,4 @@
-import { ContinueLearning, Course, Friend } from "./types";
+import { ContinueLearning, Course, Friend, Game } from "./types";
 
 export const continueLearningCourses: ContinueLearning[] = [
   {
@@ -31,10 +31,6 @@ export const friends: Friend[] = [
   {
     name: "Lyle",
     image: require("../assets/images/f1.avif"),
-  },
-  {
-    name: "Tasha",
-    image: require("../assets/images/f5.avif"),
   },
   {
     name: "James",
@@ -540,3 +536,82 @@ export const courses: Course[] = [
   introToBlockchain,
   introToBlockchain,
 ];
+
+const bugBusterPython: Game = {
+  id: "wk1-py-1",
+  title: "Bug Buster - Python Edition",
+  players: ["sylusabel1@gmail.com", "mihh.x44@gmail.com"],
+  bannerImage: require("../assets/images/pybug.png"),
+  description:
+    "Debug Python code and fix common mistakes to progress through different levels of difficulty.",
+  supportedLanguages: "Python",
+  levels: [
+    {
+      name: "Ant",
+      points: 10,
+      bug: {
+        question:
+          "What's wrong with this Python code?\n```python\nprint('Hello World')\n```",
+        answer: "Nothing, the code is correct.",
+        explanation: "This is a correct print statement in Python 3.",
+      },
+    },
+    {
+      name: "Ladybug",
+      points: 20,
+      bug: {
+        question:
+          "Fix the error in this code:\n```python\nx = input('Enter a number: ')\nprint(x + 5)\n```",
+        answer: "Convert input to int: `print(int(x) + 5)`",
+        explanation:
+          "Python treats `input()` as a string by default. We need to convert it to an integer.",
+      },
+    },
+    {
+      name: "Fly",
+      points: 30,
+      bug: {
+        question:
+          "Why does this code give an error?\n```python\nfor i in range(5):\n    print(i)\n  print('Done')\n```",
+        answer:
+          "IndentationError: `print('Done')` should be aligned with `for`.",
+        explanation:
+          "Python relies on indentation to define code blocks. Misaligned code will cause an error.",
+      },
+    },
+    {
+      name: "Cockroach",
+      points: 40,
+      bug: {
+        question:
+          "What will be printed?\n```python\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)\n```",
+        answer: "`[1, 2, 3, 4]`",
+        explanation:
+          "Lists in Python are mutable and assigned by reference, so modifying `y` also modifies `x`.",
+      },
+    },
+    {
+      name: "Spider",
+      points: 50,
+      bug: {
+        question:
+          "Fix this recursive function:\n```python\ndef factorial(n):\n  if n == 0:\n    return 1\n  return n * factorial(n - 1)\nprint(factorial(-1))\n```",
+        answer:
+          "Add a base case: `if n < 0: raise ValueError('Negative not allowed')`",
+        explanation:
+          "Recursive functions need a stopping condition for invalid input like negative numbers.",
+      },
+    },
+    {
+      name: "DragonFly",
+      points: 60,
+      bug: {
+        question:
+          "Fix memory inefficiency in this function:\n```python\ndef fibonacci(n):\n  if n <= 1:\n    return n\n  return fibonacci(n-1) + fibonacci(n-2)\n```",
+        answer: "Use memoization: `@lru_cache` or an iterative approach.",
+        explanation:
+          "Recursive Fibonacci without memoization repeats calculations, making it inefficient.",
+      },
+    },
+  ],
+};
