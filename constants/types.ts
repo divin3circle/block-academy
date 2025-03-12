@@ -85,3 +85,37 @@ export interface Course {
   bountyQuiz: Quiz[];
   modules: Module[];
 }
+
+/*
+ * @notice: interfaces for the games users can participate in
+ */
+export type SupportedGameLanguage = "Python" | "JavaScript" | "GO" | "Java";
+
+export type LevelNames =
+  | "Ant"
+  | "Ladybug"
+  | "Fly"
+  | "Cockroach"
+  | "Spider"
+  | "DragonFly";
+
+export interface Bug {
+  question: string;
+  answer: string;
+  explanation: string;
+}
+
+export interface Level {
+  name: LevelNames;
+  points: number;
+  bug: Bug;
+}
+
+export interface Game {
+  title: string;
+  description: string;
+  players: string[];
+  bannerImage: string;
+  supportedLanguages: SupportedGameLanguage;
+  levels: Level[];
+}

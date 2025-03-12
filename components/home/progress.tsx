@@ -5,7 +5,7 @@ import { Colors } from "@/constants/colors";
 import { spacing } from "@/constants/spacings";
 import CustomProgress from "../reusable/progress-component";
 
-const Progress = () => {
+const Progress = ({ showNotifications }: { showNotifications?: boolean }) => {
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
@@ -49,45 +49,47 @@ const Progress = () => {
           />
         </View>
       </View>
-      <View
-        style={{
-          height: 44,
-          width: 44,
-          borderColor: Colors.light.muted,
-          borderRadius: 22,
-          borderWidth: 2,
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-        }}
-      >
+      {showNotifications && (
         <View
           style={{
-            width: 14,
-            height: 14,
-            backgroundColor: Colors.light.primary,
-            borderRadius: 7,
+            height: 44,
+            width: 44,
+            borderColor: Colors.light.muted,
+            borderRadius: 22,
+            borderWidth: 2,
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            position: "absolute",
-            top: 0,
-            left: 0,
+            position: "relative",
           }}
         >
-          <Text
+          <View
             style={{
-              color: "#fff",
-              fontSize: 11,
-              fontFamily: "WorkSansRegular",
+              width: 14,
+              height: 14,
+              backgroundColor: Colors.light.primary,
+              borderRadius: 7,
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              position: "absolute",
+              top: 0,
+              left: 0,
             }}
           >
-            2
-          </Text>
+            <Text
+              style={{
+                color: "#fff",
+                fontSize: 11,
+                fontFamily: "WorkSansRegular",
+              }}
+            >
+              2
+            </Text>
+          </View>
+          <Ionicons name="notifications" color={Colors.light.muted} size={30} />
         </View>
-        <Ionicons name="notifications" color={Colors.light.muted} size={30} />
-      </View>
+      )}
     </View>
   );
 };

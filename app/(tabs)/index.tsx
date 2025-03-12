@@ -9,7 +9,7 @@ const home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Progress />
+        <Progress showNotifications />
         <Continue />
         <Friends />
         <Upcoming />
