@@ -129,7 +129,7 @@ const Bounty = () => {
             justifyContent: "center",
             paddingVertical: 8,
             borderRadius: 7,
-            marginTop: height / 2,
+            marginTop: 16,
           }}
         >
           <Text

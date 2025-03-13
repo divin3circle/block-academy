@@ -4,7 +4,7 @@ import { useLocalSearchParams } from "expo-router";
 
 const AIChat = () => {
   const { id, level } = useLocalSearchParams();
-  console.log(JSON.parse(level as string));
+  // console.log(JSON.parse(level as string));
   return (
     <View>
       <Text>AIChat</Text>

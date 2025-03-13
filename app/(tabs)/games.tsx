@@ -131,14 +131,45 @@ const games = () => {
           </View>
         </View>
         <View style={styles.gameContainer}>
-          <Text
+          <View
             style={{
-              fontFamily: "WorkSansSemibold",
-              fontSize: 18,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            Head 2 Head
-          </Text>
+            <Text
+              style={{
+                fontFamily: "WorkSansSemibold",
+                fontSize: 18,
+              }}
+            >
+              Head 2 Head
+            </Text>
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+                gap: 2,
+                alignItems: "center",
+              }}
+              onPress={() => {}}
+              disabled
+            >
+              <Text
+                style={{
+                  fontFamily: "WorkSansSemibold",
+                  color: Colors.light.muted,
+                }}
+              >
+                Coming Soon
+              </Text>
+              <Ionicons
+                name="arrow-forward"
+                size={16}
+                color={Colors.light.primary}
+              />
+            </TouchableOpacity>
+          </View>
           <Text
             style={{
               fontFamily: "WorkSansRegular",
