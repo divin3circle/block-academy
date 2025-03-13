@@ -101,6 +101,7 @@ export type LevelNames =
 
 export interface Bug {
   question: string;
+  code: string;
   answer: string;
   explanation: string;
 }

@@ -123,7 +123,7 @@ const pythonBounty = () => {
                 color: Colors.light.subtitles,
               }}
             >
-              17 Bugs
+              6 Bugs
             </Text>
           </View>
           <View
@@ -143,7 +143,7 @@ const pythonBounty = () => {
                 color: Colors.light.subtitles,
               }}
             >
-              100+ XP
+              10+ XP
             </Text>
           </View>
         </View>

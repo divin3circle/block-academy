@@ -108,6 +108,13 @@ export default function RootLayout() {
               title: "Solve the Bug",
             }}
           />
+          <Stack.Screen
+            name="bug-bounty/ai-chat"
+            options={{
+              title: "Submit Answer",
+              presentation: "modal",
+            }}
+          />
         </Stack>
       </QueryClientProvider>
     </PrivyProvider>

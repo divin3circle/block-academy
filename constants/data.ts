@@ -546,9 +546,9 @@ export const bugBusterPython: Game = {
       name: "Ant",
       points: 10,
       bug: {
-        question:
-          "What's wrong with this Python code?\n```python\nprint('Hello World')\n```",
+        question: "What's wrong with this Python code?\n",
         answer: "Nothing, the code is correct.",
+        code: "print('Hello World!')",
         explanation: "This is a correct print statement in Python 3.",
       },
       bgColor: "#FF9800",
@@ -559,8 +559,8 @@ export const bugBusterPython: Game = {
       name: "Ladybug",
       points: 20,
       bug: {
-        question:
-          "Fix the error in this code:\n```python\nx = input('Enter a number: ')\nprint(x + 5)\n```",
+        question: "Fix the error in this code:",
+        code: "x = input('Enter a number: ')\nprint(x + 5)",
         answer: "Convert input to int: `print(int(x) + 5)`",
         explanation:
           "Python treats `input()` as a string by default. We need to convert it to an integer.",
@@ -573,8 +573,8 @@ export const bugBusterPython: Game = {
       name: "Fly",
       points: 30,
       bug: {
-        question:
-          "Why does this code give an error?\n```python\nfor i in range(5):\n    print(i)\n  print('Done')\n```",
+        question: "Why does this code give an error?",
+        code: "for i in range(5):\n    print(i)\n  print('Done')",
         answer:
           "IndentationError: `print('Done')` should be aligned with `for`.",
         explanation:
@@ -588,8 +588,8 @@ export const bugBusterPython: Game = {
       name: "Cockroach",
       points: 40,
       bug: {
-        question:
-          "What will be printed?\n```python\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)\n```",
+        question: "What will be printed?",
+        code: "x = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
         answer: "`[1, 2, 3, 4]`",
         explanation:
           "Lists in Python are mutable and assigned by reference, so modifying `y` also modifies `x`.",
@@ -602,8 +602,8 @@ export const bugBusterPython: Game = {
       name: "Spider",
       points: 50,
       bug: {
-        question:
-          "Fix this recursive function:\n```python\ndef factorial(n):\n  if n == 0:\n    return 1\n  return n * factorial(n - 1)\nprint(factorial(-1))\n```",
+        question: "Fix this recursive function:",
+        code: "def factorial(n):\n  if n == 0:\n    return 1\n  return n * factorial(n - 1)\nprint(factorial(-1))",
         answer:
           "Add a base case: `if n < 0: raise ValueError('Negative not allowed')`",
         explanation:
@@ -617,8 +617,8 @@ export const bugBusterPython: Game = {
       name: "DragonFly",
       points: 60,
       bug: {
-        question:
-          "Fix memory inefficiency in this function:\n```python\ndef fibonacci(n):\n  if n <= 1:\n    return n\n  return fibonacci(n-1) + fibonacci(n-2)\n```",
+        question: "Fix memory inefficiency in this function:",
+        code: "def fibonacci(n):\n  if n <= 1:\n    return n\n  return fibonacci(n-1) + fibonacci(n-2)",
         answer: "Use memoization: `@lru_cache` or an iterative approach.",
         explanation:
           "Recursive Fibonacci without memoization repeats calculations, making it inefficient.",

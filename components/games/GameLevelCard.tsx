@@ -48,7 +48,7 @@ const GameLevelCard = ({ level }: { level: Level }) => {
               color: level.color,
             }}
           >
-            2 Bugs
+            1 Bug
           </Text>
         </View>
         <View style={[styles.infoContainer]}>
