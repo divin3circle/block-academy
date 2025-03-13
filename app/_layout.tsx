@@ -90,6 +90,24 @@ export default function RootLayout() {
               headerShown: true,
             }}
           />
+          <Stack.Screen
+            name="bug-bounty/index"
+            options={{
+              title: "Bug Bounty",
+            }}
+          />
+          <Stack.Screen
+            name="bug-bounty/pythonBounty"
+            options={{
+              title: "Python",
+            }}
+          />
+          <Stack.Screen
+            name="bug-bounty/[id]"
+            options={{
+              title: "Solve the Bug",
+            }}
+          />
         </Stack>
       </QueryClientProvider>
     </PrivyProvider>

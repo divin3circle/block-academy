@@ -109,6 +109,9 @@ export interface Level {
   name: LevelNames;
   points: number;
   bug: Bug;
+  bgColor: string;
+  color: string;
+  image: string;
 }
 
 export interface Game {

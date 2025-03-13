@@ -531,13 +531,9 @@ export const introToBlockchain: Course = {
   ],
 };
 
-export const courses: Course[] = [
-  introToBlockchain,
-  introToBlockchain,
-  introToBlockchain,
-];
+export const courses: Course[] = [introToBlockchain];
 
-const bugBusterPython: Game = {
+export const bugBusterPython: Game = {
   id: "wk1-py-1",
   title: "Bug Buster - Python Edition",
   players: ["sylusabel1@gmail.com", "mihh.x44@gmail.com"],
@@ -555,6 +551,9 @@ const bugBusterPython: Game = {
         answer: "Nothing, the code is correct.",
         explanation: "This is a correct print statement in Python 3.",
       },
+      bgColor: "#FF9800",
+      color: "#000",
+      image: require("../assets/images/Ant.png"),
     },
     {
       name: "Ladybug",
@@ -566,6 +565,9 @@ const bugBusterPython: Game = {
         explanation:
           "Python treats `input()` as a string by default. We need to convert it to an integer.",
       },
+      bgColor: "#4CAF50",
+      color: "#f6f7f9",
+      image: require("../assets/images/Ladybug.png"),
     },
     {
       name: "Fly",
@@ -578,6 +580,9 @@ const bugBusterPython: Game = {
         explanation:
           "Python relies on indentation to define code blocks. Misaligned code will cause an error.",
       },
+      bgColor: "#00BCD4",
+      color: "#000",
+      image: require("../assets/images/Fly.png"),
     },
     {
       name: "Cockroach",
@@ -589,6 +594,9 @@ const bugBusterPython: Game = {
         explanation:
           "Lists in Python are mutable and assigned by reference, so modifying `y` also modifies `x`.",
       },
+      bgColor: "#ECEF0EFF",
+      color: "#000",
+      image: require("../assets/images/Cockroach.png"),
     },
     {
       name: "Spider",
@@ -601,6 +609,9 @@ const bugBusterPython: Game = {
         explanation:
           "Recursive functions need a stopping condition for invalid input like negative numbers.",
       },
+      bgColor: "#D3E6D5FF",
+      color: "#000",
+      image: require("../assets/images/Spider.png"),
     },
     {
       name: "DragonFly",
@@ -612,6 +623,9 @@ const bugBusterPython: Game = {
         explanation:
           "Recursive Fibonacci without memoization repeats calculations, making it inefficient.",
       },
+      bgColor: "#414040FF",
+      color: "#f6f7f9",
+      image: require("../assets/images/DragonFly.png"),
     },
   ],
 };
