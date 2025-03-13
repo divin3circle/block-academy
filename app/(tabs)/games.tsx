@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { BlurView } from "expo-blur";
 import React from "react";
 import Progress from "@/components/home/progress";
@@ -6,8 +12,10 @@ import { Colors } from "@/constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { spacing } from "@/constants/spacings";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 
 const games = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <BlurView intensity={100} style={styles.progressContainer}>
@@ -55,14 +63,44 @@ const games = () => {
       </BlurView>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.gameContainer}>
-          <Text
+          <View
             style={{
-              fontFamily: "WorkSansSemibold",
-              fontSize: 18,
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            Bug Bounty
-          </Text>
+            <Text
+              style={{
+                fontFamily: "WorkSansSemibold",
+                fontSize: 18,
+              }}
+            >
+              Bug Bounty
+            </Text>
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+                gap: 2,
+                alignItems: "center",
+              }}
+              onPress={() => router.navigate("/bug-bounty")}
+            >
+              <Text
+                style={{
+                  fontFamily: "WorkSansSemibold",
+                  color: Colors.light.primary,
+                }}
+              >
+                Play
+              </Text>
+              <Ionicons
+                name="arrow-forward"
+                size={16}
+                color={Colors.light.primary}
+              />
+            </TouchableOpacity>
+          </View>
           <Text
             style={{
               fontFamily: "WorkSansRegular",
