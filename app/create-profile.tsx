@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  ActivityIndicator,
 } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/colors";
@@ -28,7 +29,19 @@ const createProfile = () => {
   const handleCreateProfile = () => {
     setShowModal(true);
   };
-  if (isLoading || !data) return <Text>Loading...</Text>;
+  if (isLoading || !data)
+    return (
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ActivityIndicator size={26} />
+      </View>
+    );
   return (
     <SafeAreaView style={styles.container}>
       {!showModal && <SuccessCard loading />}
