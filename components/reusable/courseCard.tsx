@@ -145,5 +145,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 2,
     marginHorizontal: 8,
+    marginVertical: 4,
   },
 });

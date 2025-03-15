@@ -531,7 +531,12 @@ export const introToBlockchain: Course = {
   ],
 };
 
-export const courses: Course[] = [introToBlockchain];
+export const courses: Course[] = [
+  introToBlockchain,
+  introToBlockchain,
+  introToBlockchain,
+  introToBlockchain,
+];
 
 export const bugBusterPython: Game = {
   id: "wk1-py-1",
