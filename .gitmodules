@@ -1,0 +1,12 @@
+[submodule "contracts/reward-system/lib/forge-std"]
+	path = contracts/reward-system/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "contracts/course-monetization/lib/forge-std"]
+	path = contracts/course-monetization/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "contracts/reward-system/lib/openzeppelin-contracts"]
+	path = contracts/reward-system/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
+[submodule "contracts/course-monetization/lib/openzeppelin-contracts"]
+	path = contracts/course-monetization/lib/openzeppelin-contracts
+	url = https://github.com/openzeppelin/openzeppelin-contracts
