@@ -10,7 +10,7 @@ import { Image } from "expo-image";
 import { Colors } from "@/constants/colors";
 import { spacing } from "@/constants/spacings";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const BugBounty = () => {
   const router = useRouter();
@@ -55,179 +55,213 @@ const BugBounty = () => {
       <View style={styles.languagesContainer}>
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
+            flexDirection: "column",
+            gap: 14,
             alignItems: "center",
-            borderBottomColor: Colors.light.muted,
-            borderBottomWidth: 0.5,
-            paddingBottom: 6,
           }}
         >
-          <View
-            style={{
-              flexDirection: "row",
-              gap: 14,
-              alignItems: "center",
-            }}
-          >
-            <View
-              style={{
-                width: 70,
-                height: 70,
-                borderRadius: 35,
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: "#FFF3E0",
-              }}
-            >
-              <Image
-                source={require("../../assets/images/py.png")}
-                contentFit="contain"
-                transition={1000}
-                style={{
-                  width: 50,
-                  height: 50,
-                }}
-              />
-            </View>
-            <Text
-              style={{
-                fontFamily: "WorkSansSemibold",
-                fontSize: 16,
-                textAlign: "center",
-                marginTop: 7,
-                color: Colors.light.subtitles,
-              }}
-            >
-              Python
-            </Text>
-          </View>
           <TouchableOpacity
             onPress={() => router.navigate("/bug-bounty/pythonBounty")}
-          >
-            <Ionicons
-              name="arrow-forward"
-              size={16}
-              color={Colors.light.primary}
-            />
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            borderBottomColor: Colors.light.muted,
-            borderBottomWidth: 0.5,
-            paddingBottom: 6,
-          }}
-        >
-          <View
             style={{
-              flexDirection: "row",
-              gap: 14,
-              alignItems: "center",
+              borderBottomColor: Colors.light.muted,
+              borderBottomWidth: 0.5,
+              paddingBottom: 10,
             }}
           >
             <View
               style={{
-                width: 70,
-                height: 70,
-                borderRadius: 35,
-                flexDirection: "column",
-                justifyContent: "center",
+                flexDirection: "row",
+                gap: 14,
                 alignItems: "center",
-                backgroundColor: "#FFF3E0",
+                width: "100%",
+                justifyContent: "space-between",
               }}
             >
-              <Image
-                source={require("../../assets/images/js.png")}
-                contentFit="contain"
-                transition={1000}
+              <View
                 style={{
-                  width: 50,
-                  height: 50,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 14,
                 }}
-              />
+              >
+                <View
+                  style={{
+                    width: 70,
+                    height: 70,
+                    borderRadius: 35,
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "#FFF3E0",
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/py.png")}
+                    contentFit="contain"
+                    transition={1000}
+                    style={{
+                      width: 50,
+                      height: 50,
+                    }}
+                  />
+                </View>
+                <Text
+                  style={{
+                    fontFamily: "WorkSansSemibold",
+                    fontSize: 16,
+                    textAlign: "center",
+                    marginTop: 7,
+                    color: Colors.light.subtitles,
+                  }}
+                >
+                  Python
+                </Text>
+              </View>
+
+              <TouchableOpacity>
+                <Ionicons
+                  name="arrow-forward"
+                  size={16}
+                  color={Colors.light.primary}
+                />
+              </TouchableOpacity>
             </View>
-            <Text
-              style={{
-                fontFamily: "WorkSansSemibold",
-                fontSize: 16,
-                textAlign: "center",
-                marginTop: 7,
-                color: Colors.light.subtitles,
-              }}
-            >
-              JavaScript
-            </Text>
-          </View>
-          <TouchableOpacity>
-            <Ionicons
-              name="arrow-forward"
-              size={16}
-              color={Colors.light.primary}
-            />
           </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            borderBottomColor: Colors.light.muted,
-            borderBottomWidth: 0.5,
-            paddingBottom: 6,
-          }}
-        >
-          <View
+          <Link
+            asChild
+            href={"/bug-bounty/pythonBounty"}
             style={{
-              flexDirection: "row",
-              gap: 14,
-              alignItems: "center",
+              borderBottomColor: Colors.light.muted,
+              borderBottomWidth: 0.5,
+              paddingBottom: 10,
             }}
           >
             <View
               style={{
-                width: 70,
-                height: 70,
-                borderRadius: 35,
-                flexDirection: "column",
-                justifyContent: "center",
+                flexDirection: "row",
+                gap: 14,
                 alignItems: "center",
-                backgroundColor: "#FFF3E0",
+                width: "100%",
+                justifyContent: "space-between",
               }}
             >
-              <Image
-                source={require("../../assets/images/sol.png")}
-                contentFit="contain"
-                transition={1000}
+              <View
                 style={{
-                  width: 50,
-                  height: 50,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 14,
                 }}
-              />
+              >
+                <View
+                  style={{
+                    width: 70,
+                    height: 70,
+                    borderRadius: 35,
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/js.png")}
+                    contentFit="contain"
+                    transition={1000}
+                    style={{
+                      width: 50,
+                      height: 50,
+                    }}
+                  />
+                </View>
+                <Text
+                  style={{
+                    fontFamily: "WorkSansSemibold",
+                    fontSize: 16,
+                    textAlign: "center",
+                    marginTop: 7,
+                    color: Colors.light.subtitles,
+                  }}
+                >
+                  JavaScript
+                </Text>
+              </View>
+
+              <TouchableOpacity>
+                <Ionicons
+                  name="arrow-forward"
+                  size={16}
+                  color={Colors.light.primary}
+                />
+              </TouchableOpacity>
             </View>
-            <Text
+          </Link>
+          <Link
+            asChild
+            href={"/bug-bounty/pythonBounty"}
+            style={{
+              borderBottomColor: Colors.light.muted,
+              borderBottomWidth: 0.5,
+              paddingBottom: 10,
+            }}
+          >
+            <View
               style={{
-                fontFamily: "WorkSansSemibold",
-                fontSize: 16,
-                textAlign: "center",
-                marginTop: 7,
-                color: Colors.light.subtitles,
+                flexDirection: "row",
+                gap: 14,
+                alignItems: "center",
+                width: "100%",
+                justifyContent: "space-between",
               }}
             >
-              Solidity
-            </Text>
-          </View>
-          <TouchableOpacity>
-            <Ionicons
-              name="arrow-forward"
-              size={16}
-              color={Colors.light.primary}
-            />
-          </TouchableOpacity>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 14,
+                }}
+              >
+                <View
+                  style={{
+                    width: 70,
+                    height: 70,
+                    borderRadius: 35,
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "#FFF3E0",
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/sol.png")}
+                    contentFit="contain"
+                    transition={1000}
+                    style={{
+                      width: 50,
+                      height: 50,
+                    }}
+                  />
+                </View>
+                <Text
+                  style={{
+                    fontFamily: "WorkSansSemibold",
+                    fontSize: 16,
+                    textAlign: "center",
+                    marginTop: 7,
+                    color: Colors.light.subtitles,
+                  }}
+                >
+                  Solidity
+                </Text>
+              </View>
+
+              <TouchableOpacity>
+                <Ionicons
+                  name="arrow-forward"
+                  size={16}
+                  color={Colors.light.primary}
+                />
+              </TouchableOpacity>
+            </View>
+          </Link>
         </View>
       </View>
     </View>
