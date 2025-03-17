@@ -27,3 +27,10 @@ export interface LoadingCardProps {
   next: string;
   animationPath: string;
 }
+
+export interface Instructor {
+  name: string;
+  description: string;
+  image: string;
+  role: string;
+}

@@ -1,3 +1,4 @@
+import { Instructor } from "@/utils/types";
 import { ContinueLearning, Course, Friend, Game } from "./types";
 
 export const continueLearningCourses: ContinueLearning[] = [
@@ -164,12 +165,12 @@ export const introToBlockchain: Course = {
   ],
   modules: [
     {
-      name: "Module 1: Fundamentals",
+      name: "Fundamentals",
       bannerImage: require("../assets/images/blockchainquiz1.svg"),
       about: "Get introduced to the core concepts of blockchain technology.",
       slides: [
         {
-          title: "Slide 1: What is Blockchain?",
+          title: "What is Blockchain?",
           summary: "A basic definition of blockchain technology.",
           content: [
             {
@@ -182,7 +183,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 2: Components of Blockchain",
+          title: "Components of Blockchain",
           summary: "Learn about blocks, chains, and nodes.",
           content: [
             {
@@ -195,7 +196,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 3: Decentralization Explained",
+          title: "Decentralization Explained",
           summary: "Understand the concept of decentralization.",
           content: [
             {
@@ -208,7 +209,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 4: Security through Cryptography",
+          title: "Security through Cryptography",
           summary: "Explore how cryptography secures blockchain data.",
           content: [
             {
@@ -221,7 +222,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 5: Blockchain Benefits",
+          title: "Blockchain Benefits",
           summary: "Review the key benefits of using blockchain.",
           content: [
             {
@@ -236,12 +237,12 @@ export const introToBlockchain: Course = {
       ],
     },
     {
-      name: "Module 2: Key Concepts",
+      name: "Key Concepts",
       bannerImage: require("../assets/images/keyconcepts.png"),
       about: "Dive deeper into the key technical concepts behind blockchain.",
       slides: [
         {
-          title: "Slide 1: Consensus Mechanisms",
+          title: "Consensus Mechanisms",
           summary: "Understand how consensus is achieved in a network.",
           content: [
             {
@@ -254,7 +255,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 2: Smart Contracts",
+          title: "Smart Contracts",
           summary: "Learn what smart contracts are and how they function.",
           content: [
             {
@@ -267,7 +268,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 3: Tokenization",
+          title: "Tokenization",
           summary: "Explore the process of tokenizing assets on a blockchain.",
           content: [
             {
@@ -280,7 +281,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 4: Public vs. Private Blockchains",
+          title: "Public vs. Private Blockchains",
           summary:
             "Compare the differences between public and private blockchains.",
           content: [
@@ -294,7 +295,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 5: Scalability Challenges",
+          title: "Scalability Challenges",
           summary: "Discuss the scalability issues facing blockchain networks.",
           content: [
             {
@@ -309,12 +310,12 @@ export const introToBlockchain: Course = {
       ],
     },
     {
-      name: "Module 3: Practical Applications",
+      name: "Practical Applications",
       bannerImage: require("../assets/images/practical.webp"),
       about: "See how blockchain is applied in various real-world scenarios.",
       slides: [
         {
-          title: "Slide 1: Supply Chain Management",
+          title: " : Supply Chain Management",
           summary: "Learn how blockchain enhances supply chain transparency.",
           content: [
             {
@@ -327,7 +328,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 2: Finance and Payments",
+          title: " : Finance and Payments",
           summary: "Discover blockchain applications in finance.",
           content: [
             {
@@ -340,7 +341,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 3: Healthcare",
+          title: "Healthcare",
           summary: "Explore how blockchain secures medical records.",
           content: [
             {
@@ -353,7 +354,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 4: Digital Identity",
+          title: " : Digital Identity",
           summary:
             "Understand blockchain's role in managing digital identities.",
           content: [
@@ -367,7 +368,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 5: Voting Systems",
+          title: "Voting Systems",
           summary: "Examine how blockchain can enhance election security.",
           content: [
             {
@@ -382,13 +383,13 @@ export const introToBlockchain: Course = {
       ],
     },
     {
-      name: "Module 4: Security & Challenges",
+      name: "Security & Challenges",
       bannerImage: require("../assets/images/securityandchallenges.webp"),
       about:
         "Examine the security challenges and potential solutions in blockchain.",
       slides: [
         {
-          title: "Slide 1: Cryptographic Security",
+          title: "Cryptographic Security",
           summary: "Learn how cryptography underpins blockchain security.",
           content: [
             {
@@ -401,7 +402,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 2: Common Vulnerabilities",
+          title: "Common Vulnerabilities",
           summary: "Discuss potential vulnerabilities in blockchain systems.",
           content: [
             {
@@ -414,7 +415,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 3: Mitigation Strategies",
+          title: "Mitigation Strategies",
           summary: "Explore strategies to mitigate security risks.",
           content: [
             {
@@ -427,7 +428,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 4: Regulatory Challenges",
+          title: "Regulatory Challenges",
           summary: "Examine the regulatory landscape for blockchain.",
           content: [
             {
@@ -440,7 +441,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 5: Future Security Innovations",
+          title: "Future Security Innovations",
           summary: "Look at upcoming innovations in blockchain security.",
           content: [
             {
@@ -455,13 +456,13 @@ export const introToBlockchain: Course = {
       ],
     },
     {
-      name: "Module 5: Future Trends",
+      name: "Future Trends",
       bannerImage: require("../assets/images/futureblockchain.webp"),
       about:
         "Explore the future potential and emerging trends in blockchain technology.",
       slides: [
         {
-          title: "Slide 1: Emerging Use Cases",
+          title: "Emerging Use Cases",
           summary: "Discover new industries adopting blockchain.",
           content: [
             {
@@ -474,7 +475,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 2: Scalability Solutions",
+          title: "Scalability Solutions",
           summary: "Understand approaches to overcome scalability issues.",
           content: [
             {
@@ -487,7 +488,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 3: Interoperability",
+          title: "Interoperability",
           summary: "Examine the importance of blockchain interoperability.",
           content: [
             {
@@ -500,7 +501,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 4: Institutional Adoption",
+          title: "Institutional Adoption",
           summary: "Look at how institutions are embracing blockchain.",
           content: [
             {
@@ -513,7 +514,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: "Slide 5: The Road Ahead",
+          title: "The Road Ahead",
           summary: "A visionary look at the future of blockchain.",
           content: [
             {
@@ -633,3 +634,20 @@ export const bugBusterPython: Game = {
     },
   ],
 };
+
+export const instructors: Instructor[] = [
+  {
+    name: "Sylus Abel",
+    description:
+      "Sylus is Frontend and Blockchain Developer with 3 years of experience in building React and Web3 Applications",
+    image: require("../assets/images/f1.avif"),
+    role: "Frontend Engineer - StratosphereX",
+  },
+  {
+    name: "Jane Doe",
+    description:
+      "Jane Done has been an active face in the Web3 space for more than 5 fives with several startups launched across the country.",
+    image: require("../assets/images/f6.avif"),
+    role: "CTO - UniqueLabs",
+  },
+];
