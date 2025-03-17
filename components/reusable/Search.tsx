@@ -8,7 +8,7 @@ const Search = () => {
   return (
     <View style={styles.container}>
       <View style={styles.searchContainer}>
-        <Ionicons name="search" size={34} color={Colors.light.primary} />
+        <Ionicons name="search" size={28} color={Colors.light.primary} />
         <TextInput
           onChangeText={() => {}}
           placeholder="Search"
