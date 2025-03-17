@@ -315,7 +315,7 @@ export const introToBlockchain: Course = {
       about: "See how blockchain is applied in various real-world scenarios.",
       slides: [
         {
-          title: " : Supply Chain Management",
+          title: "Supply Chain Management",
           summary: "Learn how blockchain enhances supply chain transparency.",
           content: [
             {
@@ -328,7 +328,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: " : Finance and Payments",
+          title: "Finance and Payments",
           summary: "Discover blockchain applications in finance.",
           content: [
             {
@@ -354,7 +354,7 @@ export const introToBlockchain: Course = {
           ],
         },
         {
-          title: " : Digital Identity",
+          title: "Digital Identity",
           summary:
             "Understand blockchain's role in managing digital identities.",
           content: [

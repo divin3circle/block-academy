@@ -473,6 +473,18 @@ const CoursePage = () => {
           </View>
         </View>
       </View>
+      <TouchableOpacity style={styles.btn}>
+        <Text
+          style={{
+            fontFamily: "WorkSansSemibold",
+            fontSize: 16,
+            color: "#f6f7f9",
+          }}
+        >
+          Enroll, {"(FREE)"}
+        </Text>
+        <Ionicons name="arrow-forward-circle" color="#f6f7f9" size={20} />
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -498,5 +510,20 @@ const styles = StyleSheet.create({
     zIndex: 50,
     backgroundColor: "#f6f7f9",
     padding: spacing.horizontalPadding,
+  },
+  btn: {
+    marginHorizontal: 14,
+    height: 50,
+    backgroundColor: Colors.light.primary,
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 30,
+    flexDirection: "row",
+    gap: 4,
+    position: "sticky",
+    bottom: 0,
+    marginVertical: 30,
+    zIndex: 60,
   },
 });
