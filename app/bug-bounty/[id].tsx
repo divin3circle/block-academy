@@ -6,6 +6,7 @@ import { Image } from "expo-image";
 import { spacing } from "@/constants/spacings";
 import { Colors } from "@/constants/colors";
 import CodeBlock from "@/components/reusable/CodeBlock";
+import AIChat from "./ai-chat";
 
 const Bounty = () => {
   const { id } = useLocalSearchParams();
@@ -120,9 +121,6 @@ const Bounty = () => {
           asChild
           style={{
             marginHorizontal: spacing.horizontalPadding / 2,
-            borderColor: Colors.light.primary,
-            backgroundColor: Colors.light.primary,
-            borderWidth: 1,
             width: "100%",
             flexDirection: "column",
             alignItems: "center",
@@ -135,12 +133,12 @@ const Bounty = () => {
           <Text
             style={{
               fontFamily: "WorkSansSemibold",
-              fontSize: 16,
-              color: "#f6f7f8",
+              fontSize: 18,
+              color: Colors.light.primary,
               textAlign: "center",
             }}
           >
-            Eureka! 🎉
+            Eureka!
           </Text>
         </Link>
       </View>

@@ -112,7 +112,13 @@ export default function RootLayout() {
             name="bug-bounty/ai-chat"
             options={{
               title: "Submit Answer",
-              presentation: "modal",
+            }}
+          />
+          <Stack.Screen
+            name="course/[id]"
+            options={{
+              title: "Course",
+              headerShown: false,
             }}
           />
         </Stack>

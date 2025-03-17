@@ -18,6 +18,7 @@ export default () => {
         name="games"
         options={{
           title: "Games",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Ionicons name="game-controller" color={color} size={30} />
           ),
@@ -27,6 +28,7 @@ export default () => {
         name="wallet"
         options={{
           title: "Wallet",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Ionicons name="wallet" color={color} size={30} />
           ),
@@ -36,6 +38,7 @@ export default () => {
         name="marketplace"
         options={{
           title: "Marketplace",
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Ionicons name="cart" color={color} size={30} />
           ),

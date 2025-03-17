@@ -70,8 +70,8 @@ const AIChat = () => {
 
   return (
     <>
-      {loading ? (
-        <LoadingCard status={failedStatus} />
+      {!loading ? (
+        <LoadingCard status={successStatus} />
       ) : (
         <SafeAreaView style={styles.container}>
           <View
@@ -145,6 +145,7 @@ const AIChat = () => {
                 gap: 4,
                 marginTop: 10,
               }}
+              onPress={checkUserAnswer}
             >
               <Text
                 style={{

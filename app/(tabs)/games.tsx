@@ -4,6 +4,7 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import { BlurView } from "expo-blur";
 import React from "react";
@@ -17,7 +18,7 @@ import { useRouter } from "expo-router";
 const games = () => {
   const router = useRouter();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <BlurView intensity={100} style={styles.progressContainer}>
         <Progress />
         <View
@@ -200,7 +201,7 @@ const games = () => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,23 +1,40 @@
-import { Dimensions, StyleSheet, Text, View, Platform } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { Course } from "@/constants/types";
 import { Image } from "expo-image";
 import { Colors } from "@/constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { spacing } from "@/constants/spacings";
+import { Link, useRouter } from "expo-router";
 const { width, height } = Dimensions.get("window");
 
 const CourseCard = ({ course }: { course: Course }) => {
+  const parsedCourse = JSON.stringify(course);
   return (
     <View style={styles.container}>
-      <View style={{}}>
+      <View
+        style={{
+          width: "100%",
+          marginBottom: 8,
+        }}
+      >
         <Image
           source={course.logo}
-          contentFit="contain"
+          contentFit="cover"
           transition={1000}
           style={{
             width: "100%",
-            height: 150,
+            height: 200,
+            borderTopLeftRadius: 15,
+            borderTopRightRadius: 15,
           }}
         />
       </View>
@@ -25,6 +42,7 @@ const CourseCard = ({ course }: { course: Course }) => {
         style={{
           flexDirection: "column",
           gap: 6,
+          paddingHorizontal: spacing.horizontalPadding,
         }}
       >
         <View
@@ -43,7 +61,20 @@ const CourseCard = ({ course }: { course: Course }) => {
           >
             {course.topic}
           </Text>
-          <Ionicons name="book" color={Colors.light.muted} size={16} />
+          <Link
+            asChild
+            href={{
+              pathname: "/course/[id]",
+              params: { id: course.id, course: parsedCourse },
+            }}
+            // style={styles.container}
+          >
+            <Ionicons
+              name="arrow-forward"
+              color={Colors.light.primary}
+              size={22}
+            />
+          </Link>
         </View>
         <View>
           <Text
@@ -137,7 +168,6 @@ const styles = StyleSheet.create({
     width: width * 0.85,
     borderRadius: 15,
     backgroundColor: "#f6f7f9",
-    paddingHorizontal: spacing.horizontalPadding,
     paddingBottom: 12,
     elevation: 20,
     shadowColor: Colors.light.primary,
