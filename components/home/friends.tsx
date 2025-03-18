@@ -13,7 +13,7 @@ const Friends = () => {
           fontSize: 24,
         }}
       >
-        My Friends
+        My Agents
       </Text>
       <FlatList
         data={friends}
