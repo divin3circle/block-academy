@@ -71,7 +71,7 @@ export const introToBlockchain: Course = {
   enrollmentFee: "FREE",
   bountyPoints: 50,
   rating: 4.5,
-  topic: "Blockchain",
+  topic: "Blockchain & Web3",
   bountyQuiz: [
     {
       name: "Blockchain Quiz 1",
@@ -531,12 +531,7 @@ export const introToBlockchain: Course = {
   ],
 };
 
-export const courses: Course[] = [
-  introToBlockchain,
-  introToBlockchain,
-  introToBlockchain,
-  introToBlockchain,
-];
+export const courses: Course[] = [introToBlockchain];
 
 export const bugBusterPython: Game = {
   id: "wk1-py-1",

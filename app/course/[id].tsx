@@ -191,11 +191,25 @@ function ModuleCard({ module }: { module: Module }) {
 
 const CoursePage = () => {
   const { id, course } = useLocalSearchParams();
+
   const router = useRouter();
   const parsedCourse: Course = JSON.parse(course as string);
   const [cardContent, setCardContent] = useState<"about" | "curriculum">(
     "curriculum"
   );
+
+  const handleNavigateToLearn = async () => {
+    // check if the user has already purchased
+    // this course, if not initiate a wallet
+    // popover message to sign the txn
+    // set the params to the selected course
+    router.setParams({ course: course });
+    // navigate to the course's leaning page
+    router.push({
+      pathname: "/learn/[id]",
+      params: { id: parsedCourse.id, course: course },
+    });
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -473,7 +487,7 @@ const CoursePage = () => {
           </View>
         </View>
       </View>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={handleNavigateToLearn}>
         <Text
           style={{
             fontFamily: "WorkSansSemibold",
