@@ -11,6 +11,7 @@ import { spacing } from "@/constants/spacings";
 import { Colors } from "@/constants/colors";
 import CustomProgress from "../reusable/progress-component";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 
 const { width, height } = Dimensions.get("window");
 
@@ -19,6 +20,7 @@ const ContinueLearnCard = ({
 }: {
   continueLearningItem: ContinueLearning;
 }) => {
+  const router = useRouter();
   return (
     <View
       style={[
@@ -81,6 +83,7 @@ const ContinueLearnCard = ({
               backgroundColor: continueLearningItem.btnColor,
             },
           ]}
+          onPress={() => router.navigate("/profile")}
         >
           <Text
             style={{
