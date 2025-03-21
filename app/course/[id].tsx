@@ -15,7 +15,7 @@ import { Course, Module, Slide } from "@/constants/types";
 import { Image } from "expo-image";
 import { spacing } from "@/constants/spacings";
 import { Instructor } from "@/utils/types";
-import { instructors } from "@/constants/data";
+import { courses, instructors } from "@/constants/data";
 
 const { width } = Dimensions.get("window");
 
@@ -190,24 +190,55 @@ function ModuleCard({ module }: { module: Module }) {
 }
 
 const CoursePage = () => {
-  const { id, course } = useLocalSearchParams();
+  const { id } = useLocalSearchParams();
+  const course = courses.find((course) => course.id === id);
 
   const router = useRouter();
-  const parsedCourse: Course = JSON.parse(course as string);
   const [cardContent, setCardContent] = useState<"about" | "curriculum">(
     "curriculum"
   );
+
+  if (!course) {
+    return (
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Text
+          style={{
+            fontFamily: "WorkSansRegular",
+            fontSize: 16,
+          }}
+        >
+          Courser with id {id} could not be found.
+        </Text>
+        <TouchableOpacity onPress={() => router.navigate("/(tabs)")}>
+          <Text
+            style={{
+              fontFamily: "WorkSansRegular",
+              fontSize: 16,
+              color: Colors.light.primary,
+            }}
+          >
+            Back Home
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   const handleNavigateToLearn = async () => {
     // check if the user has already purchased
     // this course, if not initiate a wallet
     // popover message to sign the txn
-    // set the params to the selected course
-    router.setParams({ course: course });
     // navigate to the course's leaning page
     router.push({
       pathname: "/learn/[id]",
-      params: { id: parsedCourse.id, course: course },
+      params: { id: course.id },
     });
   };
 
@@ -237,7 +268,7 @@ const CoursePage = () => {
         }}
       >
         <Image
-          source={parsedCourse.logo}
+          source={course.logo}
           contentFit="cover"
           transition={1000}
           style={{
@@ -275,7 +306,7 @@ const CoursePage = () => {
                   color: Colors.light.primary,
                 }}
               >
-                {parsedCourse.topic}
+                {course.topic}
               </Text>
               <View
                 style={{
@@ -292,7 +323,7 @@ const CoursePage = () => {
                     color: Colors.light.primary,
                   }}
                 >
-                  {parsedCourse.rating}
+                  {course.rating}
                 </Text>
               </View>
             </View>
@@ -304,7 +335,7 @@ const CoursePage = () => {
                 paddingVertical: 4,
               }}
             >
-              {parsedCourse.name}
+              {course.name}
             </Text>
             <View
               style={{
@@ -328,7 +359,7 @@ const CoursePage = () => {
                     color: Colors.light.subtitles,
                   }}
                 >
-                  {parsedCourse.enrolledUsers} Enrolled
+                  {course.enrolledUsers} Enrolled
                 </Text>
               </View>
               <View
@@ -353,7 +384,7 @@ const CoursePage = () => {
                     color: Colors.light.subtitles,
                   }}
                 >
-                  {parsedCourse.modules.length} Modules
+                  {course.modules.length} Modules
                 </Text>
               </View>
             </View>
@@ -478,7 +509,7 @@ const CoursePage = () => {
                     marginTop: 7,
                   }}
                 >
-                  {parsedCourse.modules.map((module) => (
+                  {course.modules.map((module) => (
                     <ModuleCard module={module} />
                   ))}
                 </View>

@@ -178,7 +178,7 @@ export const introToBlockchain: Course = {
                 "Blockchain is a decentralized ledger that records transactions securely.",
               exampleImage: require("../assets/images/blockchainbasics.webp"),
               AdditionalParagraph:
-                "This slide covers the basic definition and importance of decentralization.",
+                "This slide covers the basic definition and importance of decentralization. In the very first age of the internet the web as we know it was read only.\n\nWeb2 brought us interactive platforms but centralized control. Now Web3 emerges with user-owned data and protocols. Blockchain enables this through distributed consensus\nand cryptographically secured transactions.\nIt powers cryptocurrencies but also enables\nsmart contracts and decentralized apps (dApps).\n\nDecentralized Autonomous Organizations (DAOs) allow community-governed ecosystems where users collectively make decisions through token-based governance systems.",
             },
           ],
         },

@@ -83,7 +83,7 @@ const ContinueLearnCard = ({
               backgroundColor: continueLearningItem.btnColor,
             },
           ]}
-          onPress={() => router.navigate("/profile")}
+          onPress={() => router.navigate("/course/1")}
         >
           <Text
             style={{
