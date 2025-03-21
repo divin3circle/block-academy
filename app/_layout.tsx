@@ -41,7 +41,11 @@ export default function RootLayout() {
       supportedChains={[openCampusChain]}
     >
       <QueryClientProvider client={queryClient}>
-        <Stack>
+        <Stack
+          screenOptions={{
+            presentation: "card",
+          }}
+        >
           <Stack.Screen
             name="(tabs)"
             options={{
