@@ -1,5 +1,13 @@
 import { Instructor } from "@/utils/types";
-import { ContinueLearning, Course, Friend, Game, UserOptions } from "./types";
+import {
+  ContinueLearning,
+  Course,
+  Friend,
+  Game,
+  NFT,
+  Token,
+  UserOptions,
+} from "./types";
 
 export const continueLearningCourses: ContinueLearning[] = [
   {
@@ -667,5 +675,56 @@ export const defaultUserOptions: UserOptions[] = [
   {
     index: 4,
     option: "",
+  },
+];
+
+export const nfts: NFT[] = [
+  {
+    id: "1",
+    network: require("../assets/images/hedera.png"),
+    image: require("../assets/images/cert1.webp"),
+    price: 0.0467,
+  },
+  {
+    id: "2",
+    network: require("../assets/images/educhain.webp"),
+    image: require("../assets/images/cert2.webp"),
+    price: 27.89,
+  },
+  {
+    id: "3",
+    network: require("../assets/images/hedera.png"),
+    image: require("../assets/images/cert3.webp"),
+    price: 0.0787,
+  },
+  {
+    id: "4",
+    network: require("../assets/images/eth.png"),
+    image: require("../assets/images/cert4.svg"),
+    price: 0.00207,
+  },
+];
+
+export const tokens: Token[] = [
+  {
+    name: "HBAR",
+    network: require("../assets/images/hedera.png"),
+    balance: 3000,
+    balanceUSD: 60,
+    balanceKES: 7800,
+  },
+  {
+    name: "ETH",
+    network: require("../assets/images/eth.png"),
+    balance: 0.045,
+    balanceUSD: 89.95,
+    balanceKES: 11447.65,
+  },
+  {
+    name: "$EDU",
+    network: require("../assets/images/educhain.webp"),
+    balance: 30,
+    balanceUSD: 30.03,
+    balanceKES: 4094.78,
   },
 ];

@@ -5,209 +5,371 @@ import {
   SafeAreaView,
   Dimensions,
   TouchableOpacity,
+  FlatList,
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import { spacing } from "@/constants/spacings";
 import { Colors } from "@/constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 import Lottie from "lottie-react-native";
+import { nfts } from "@/constants/data";
+import { Image } from "expo-image";
 
 const { width } = Dimensions.get("window");
 
 const wallet = () => {
   const [isHidden, setIsHidden] = useState(true);
+  const [viewAsset, setViewAsset] = useState<"tokens" | "agents">("tokens");
   return (
     <SafeAreaView style={styles.container}>
-      <View
+      <ScrollView
         style={{
-          marginVertical: spacing.componentTopMargin / 2,
-          paddingHorizontal: spacing.horizontalPadding,
+          flex: 1,
         }}
       >
-        <Text
+        <View
           style={{
-            fontFamily: "WorkSansLight",
-            fontSize: 16,
+            marginVertical: spacing.componentTopMargin / 2,
+            paddingHorizontal: spacing.horizontalPadding,
           }}
         >
-          Good Afternoon,
-        </Text>
-        <Text
-          style={{
-            fontFamily: "WorkSansSemibold",
-            fontSize: 20,
-          }}
-        >
-          Sylus Abel
-        </Text>
-      </View>
-      <View
-        style={{
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingHorizontal: spacing.horizontalPadding,
-        }}
-      >
-        <View style={styles.walletCard}>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          <Text
+            style={{
+              fontFamily: "WorkSansLight",
+              fontSize: 16,
+            }}
           >
+            Good Afternoon,
+          </Text>
+          <Text
+            style={{
+              fontFamily: "WorkSansSemibold",
+              fontSize: 20,
+            }}
+          >
+            Sylus Abel
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingHorizontal: spacing.horizontalPadding,
+          }}
+        >
+          <View style={styles.walletCard}>
             <View
-              style={{
-                padding: 10,
-              }}
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
             >
-              <Text
-                style={{
-                  fontFamily: "WorkSansRegular",
-                  fontSize: 26,
-                  marginVertical: 4,
-                  color: "#f6f7f9",
-                }}
-              >
-                Total Balance
-              </Text>
               <View
                 style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: 8,
+                  padding: 10,
                 }}
               >
                 <Text
                   style={{
-                    fontFamily: "WorkSansSemibold",
-                    fontSize: 36,
-                    marginVertical: 8,
+                    fontFamily: "WorkSansRegular",
+                    fontSize: 26,
+                    marginVertical: 4,
                     color: "#f6f7f9",
                   }}
                 >
-                  {isHidden ? "******" : " $192.07"}
+                  Total Balance
                 </Text>
-                <TouchableOpacity onPress={() => setIsHidden(!isHidden)}>
-                  {isHidden ? (
-                    <Ionicons name="eye" size={30} color="#f6f7f9" />
-                  ) : (
-                    <Ionicons name="eye-off" size={30} color="#f6f7f9" />
-                  )}
-                </TouchableOpacity>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: "WorkSansSemibold",
+                      fontSize: 36,
+                      marginVertical: 8,
+                      color: "#f6f7f9",
+                    }}
+                  >
+                    {isHidden ? "******" : " $192.07"}
+                  </Text>
+                  <TouchableOpacity onPress={() => setIsHidden(!isHidden)}>
+                    {isHidden ? (
+                      <Ionicons name="eye" size={30} color="#f6f7f9" />
+                    ) : (
+                      <Ionicons name="eye-off" size={30} color="#f6f7f9" />
+                    )}
+                  </TouchableOpacity>
+                </View>
+                <Text
+                  style={{
+                    fontFamily: "WorkSansLight",
+                    fontSize: 18,
+                    marginVertical: 4,
+                    color: "#f6f7f9",
+                  }}
+                >
+                  +$67.48{"(12.54%)"}
+                </Text>
               </View>
-              <Text
+              <View>
+                <Lottie
+                  source={require("../../assets/lottie/userWallet.json")}
+                  autoPlay
+                  loop
+                  style={{
+                    width: width * 0.4,
+                    height: width * 0.4,
+                  }}
+                />
+              </View>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "absolute",
+                bottom: 15,
+                right: 0,
+                left: 0,
+                gap: 8,
+              }}
+            >
+              <View
                 style={{
-                  fontFamily: "WorkSansLight",
-                  fontSize: 18,
-                  marginVertical: 4,
-                  color: "#f6f7f9",
+                  backgroundColor: Colors.light.tint,
+                  padding: 10,
+                  borderRadius: 24,
+                  flexDirection: "row",
+                  gap: 4,
+                  width: 110,
+                  justifyContent: "center",
                 }}
               >
-                +$67.48{"(12.54%)"}
-              </Text>
-            </View>
-            <View>
-              <Lottie
-                source={require("../../assets/lottie/userWallet.json")}
-                autoPlay
-                loop
+                <Ionicons
+                  name="arrow-up-circle"
+                  size={20}
+                  color={Colors.light.titles}
+                />
+                <Text
+                  style={{
+                    fontFamily: "WorkSansRegular",
+                    fontSize: 18,
+                  }}
+                >
+                  Send
+                </Text>
+              </View>
+              <View
                 style={{
-                  width: width * 0.4,
-                  height: width * 0.4,
+                  backgroundColor: Colors.light.tint,
+                  padding: 10,
+                  borderRadius: 24,
+                  flexDirection: "row",
+                  gap: 4,
+                  alignItems: "center",
+                  width: 110,
+                  justifyContent: "center",
                 }}
-              />
+              >
+                <Ionicons
+                  name="arrow-down-circle"
+                  size={20}
+                  color={Colors.light.titles}
+                />
+                <Text
+                  style={{
+                    fontFamily: "WorkSansRegular",
+                    fontSize: 18,
+                  }}
+                >
+                  Receive
+                </Text>
+              </View>
+              <View
+                style={{
+                  backgroundColor: Colors.light.tint,
+                  padding: 10,
+                  borderRadius: 24,
+                  flexDirection: "row",
+                  gap: 4,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 110,
+                }}
+              >
+                <Ionicons
+                  name="swap-horizontal"
+                  size={20}
+                  color={Colors.light.titles}
+                />
+                <Text
+                  style={{
+                    fontFamily: "WorkSansRegular",
+                    fontSize: 18,
+                  }}
+                >
+                  Swap
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.nftCard}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "WorkSansSemibold",
+                  fontSize: 20,
+                  color: Colors.light.titles,
+                }}
+              >
+                My NFTs
+              </Text>
+              <TouchableOpacity onPress={() => {}}>
+                <Text
+                  style={{
+                    fontFamily: "WorkSansRegular",
+                  }}
+                >
+                  See All
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <FlatList
+              data={nfts}
+              renderItem={({ item }) => (
+                <View
+                  style={{
+                    marginHorizontal: 10,
+                  }}
+                >
+                  <Image
+                    source={item.image}
+                    contentFit="cover"
+                    transition={1000}
+                    style={{
+                      width: 150,
+                      height: 150,
+                    }}
+                  />
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      gap: 4,
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Image
+                      source={item.network}
+                      contentFit="cover"
+                      transition={1000}
+                      style={{
+                        width: 25,
+                        height: 25,
+                        borderRadius: 15,
+                      }}
+                    />
+                    <Text
+                      style={{
+                        fontFamily: "WorkSansSemibold",
+                        fontSize: 16,
+                      }}
+                    >
+                      {item.price}
+                    </Text>
+                  </View>
+                </View>
+              )}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+            />
+          </View>
+        </View>
+        <View
+          style={{
+            paddingHorizontal: spacing.horizontalPadding,
+          }}
+        >
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "WorkSansSemibold",
+                fontSize: 24,
+                color: Colors.light.titles,
+              }}
+            >
+              My Assets
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                gap: 12,
+                alignItems: "center",
+              }}
+            >
+              <TouchableOpacity
+                style={{
+                  backgroundColor:
+                    viewAsset === "tokens" ? Colors.light.tint : "transparent",
+                  padding: 8,
+                  borderRadius: 8,
+                }}
+                onPress={() => setViewAsset("tokens")}
+              >
+                <Text
+                  style={{
+                    fontFamily: "WorkSansRegular",
+                    fontSize: 14,
+                  }}
+                >
+                  Tokens
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  backgroundColor:
+                    viewAsset === "agents" ? Colors.light.tint : "transparent",
+                  padding: 8,
+                  borderRadius: 8,
+                }}
+                onPress={() => setViewAsset("agents")}
+              >
+                <Text
+                  style={{
+                    fontFamily: "WorkSansRegular",
+                    fontSize: 14,
+                  }}
+                >
+                  Agents
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
           <View
             style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "absolute",
-              bottom: 15,
-              right: 0,
-              left: 0,
-              gap: 8,
+              marginTop: 8,
             }}
           >
-            <View
-              style={{
-                backgroundColor: Colors.light.tint,
-                padding: 10,
-                borderRadius: 24,
-                flexDirection: "row",
-                gap: 4,
-                width: 110,
-                justifyContent: "center",
-              }}
-            >
-              <Ionicons
-                name="arrow-up-circle"
-                size={20}
-                color={Colors.light.titles}
-              />
-              <Text
-                style={{
-                  fontFamily: "WorkSansRegular",
-                  fontSize: 18,
-                }}
-              >
-                Send
-              </Text>
-            </View>
-            <View
-              style={{
-                backgroundColor: Colors.light.tint,
-                padding: 10,
-                borderRadius: 24,
-                flexDirection: "row",
-                gap: 4,
-                alignItems: "center",
-                width: 110,
-                justifyContent: "center",
-              }}
-            >
-              <Ionicons
-                name="arrow-down-circle"
-                size={20}
-                color={Colors.light.titles}
-              />
-              <Text
-                style={{
-                  fontFamily: "WorkSansRegular",
-                  fontSize: 18,
-                }}
-              >
-                Receive
-              </Text>
-            </View>
-            <View
-              style={{
-                backgroundColor: Colors.light.tint,
-                padding: 10,
-                borderRadius: 24,
-                flexDirection: "row",
-                gap: 4,
-                alignItems: "center",
-                justifyContent: "center",
-                width: 110,
-              }}
-            >
-              <Ionicons
-                name="swap-horizontal"
-                size={20}
-                color={Colors.light.titles}
-              />
-              <Text
-                style={{
-                  fontFamily: "WorkSansRegular",
-                  fontSize: 18,
-                }}
-              >
-                Swap
-              </Text>
-            </View>
+            <Text>Assets here</Text>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -222,8 +384,16 @@ const styles = StyleSheet.create({
   walletCard: {
     backgroundColor: Colors.light.primary,
     width: width * 0.95,
-    height: width * 0.55,
+    height: width * 0.6,
     borderRadius: 14,
     position: "relative",
+  },
+  nftCard: {
+    width: width * 0.95,
+    height: width * 0.55,
+    backgroundColor: "#eff0f3",
+    borderRadius: 14,
+    marginVertical: spacing.componentTopMargin,
+    padding: 20,
   },
 });

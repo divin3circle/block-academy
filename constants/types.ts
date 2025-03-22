@@ -129,3 +129,18 @@ export interface UserOptions {
   index: number;
   option: string;
 }
+
+export interface NFT {
+  id: string;
+  price: number;
+  network: string;
+  image: string;
+}
+
+export interface Token {
+  name: string;
+  balance: number;
+  network: string;
+  balanceUSD: number;
+  balanceKES: number;
+}
