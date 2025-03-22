@@ -530,6 +530,38 @@ const CoursePage = () => {
         </Text>
         <Ionicons name="arrow-forward-circle" color="#f6f7f9" size={20} />
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          marginHorizontal: 14,
+          height: 50,
+          backgroundColor: Colors.light.tint,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 30,
+          flexDirection: "row",
+          gap: 4,
+          position: "sticky",
+          bottom: 0,
+          marginVertical: 0,
+          zIndex: 60,
+        }}
+        onPress={() => router.replace("/quiz/1")}
+      >
+        <Text
+          style={{
+            fontFamily: "WorkSansSemibold",
+            fontSize: 16,
+            color: Colors.light.titles,
+          }}
+        >
+          Take Quiz
+        </Text>
+        <Ionicons
+          name="arrow-forward-circle"
+          color={Colors.light.titles}
+          size={20}
+        />
+      </TouchableOpacity>
     </ScrollView>
   );
 };

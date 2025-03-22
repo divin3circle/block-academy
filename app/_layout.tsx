@@ -132,6 +132,13 @@ export default function RootLayout() {
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="quiz/[id]"
+            options={{
+              title: "Quiz",
+              headerShown: true,
+            }}
+          />
         </Stack>
       </QueryClientProvider>
     </PrivyProvider>

@@ -124,3 +124,8 @@ export interface Game {
   supportedLanguages: SupportedGameLanguage;
   levels: Level[];
 }
+
+export interface UserOptions {
+  index: number;
+  option: string;
+}

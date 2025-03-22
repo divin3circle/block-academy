@@ -1,5 +1,5 @@
 import { Instructor } from "@/utils/types";
-import { ContinueLearning, Course, Friend, Game } from "./types";
+import { ContinueLearning, Course, Friend, Game, UserOptions } from "./types";
 
 export const continueLearningCourses: ContinueLearning[] = [
   {
@@ -644,5 +644,28 @@ export const instructors: Instructor[] = [
       "Jane Done has been an active face in the Web3 space for more than 5 fives with several startups launched across the country.",
     image: require("../assets/images/f6.avif"),
     role: "CTO - UniqueLabs",
+  },
+];
+
+export const defaultUserOptions: UserOptions[] = [
+  {
+    index: 0,
+    option: "",
+  },
+  {
+    index: 1,
+    option: "",
+  },
+  {
+    index: 2,
+    option: "",
+  },
+  {
+    index: 3,
+    option: "",
+  },
+  {
+    index: 4,
+    option: "",
   },
 ];
