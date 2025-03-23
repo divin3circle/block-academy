@@ -497,6 +497,7 @@ const wallet = () => {
                       style={{
                         flexDirection: "column",
                         alignItems: "flex-end",
+                        gap: 2,
                       }}
                     >
                       <Text
@@ -513,7 +514,7 @@ const wallet = () => {
                           fontSize: 12,
                         }}
                       >
-                        {friend.iq === 0 ? "" : "$0.1 / token"}
+                        {friend.iq === 0 ? "" : "Owns"}
                       </Text>
                     </View>
                   </View>
