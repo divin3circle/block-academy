@@ -447,7 +447,7 @@ const wallet = () => {
                   marginTop: 8,
                 }}
               >
-                {friends.map((friend, index) => (
+                {friends.slice(0, 4).map((friend, index) => (
                   <View
                     key={index}
                     style={{
@@ -521,6 +521,39 @@ const wallet = () => {
                 ))}
               </View>
             )}
+          </View>
+          <View
+            style={{
+              marginVertical: spacing.componentTopMargin,
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  fontFamily: "WorkSansSemibold",
+                  fontSize: 24,
+                  color: Colors.light.titles,
+                }}
+              >
+                Transaction History
+              </Text>
+            </View>
+            <Text
+              style={{
+                textAlign: "center",
+                marginTop: 12,
+                fontFamily: "WorkSansRegular",
+                fontSize: 14,
+              }}
+            >
+              Nothing to see here yet!
+            </Text>
           </View>
         </View>
       </ScrollView>
