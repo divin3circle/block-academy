@@ -40,34 +40,50 @@ export const friends: Friend[] = [
   {
     name: "Lyle",
     image: require("../assets/images/f1.avif"),
+    iq: 96,
+    category: "Math & Science",
   },
   {
     name: "James",
     image: require("../assets/images/f2.avif"),
+    iq: 76,
+    category: "Computer Programming",
   },
   {
     name: "Kate",
     image: require("../assets/images/f7.avif"),
+    iq: 87,
+    category: "History & Arts",
   },
   {
     name: "Moses",
     image: require("../assets/images/f3.avif"),
+    iq: 75,
+    category: "Language & Literature",
   },
   {
     name: "Rose",
     image: require("../assets/images/f8.jpg"),
+    iq: 80,
+    category: "Finance",
   },
   {
     name: "Sylus",
     image: require("../assets/images/f4.avif"),
+    iq: 83,
+    category: "Computer Programming",
   },
   {
     name: "Lenny",
     image: require("../assets/images/f6.avif"),
+    iq: 79,
+    category: "Fiction & Generation",
   },
   {
     name: "Add",
     image: require("../assets/images/plus.svg"),
+    iq: 0,
+    category: "",
   },
 ];
 
@@ -708,23 +724,26 @@ export const nfts: NFT[] = [
 export const tokens: Token[] = [
   {
     name: "HBAR",
-    network: require("../assets/images/hedera.png"),
+    image: require("../assets/images/hedera.png"),
+    network: "Hedera",
     balance: 3000,
     balanceUSD: 60,
     balanceKES: 7800,
   },
   {
     name: "ETH",
-    network: require("../assets/images/eth.png"),
+    image: require("../assets/images/eth.png"),
     balance: 0.045,
     balanceUSD: 89.95,
     balanceKES: 11447.65,
+    network: "Ethereum",
   },
   {
     name: "$EDU",
-    network: require("../assets/images/educhain.webp"),
+    image: require("../assets/images/educhain.webp"),
     balance: 30,
     balanceUSD: 30.03,
     balanceKES: 4094.78,
+    network: "Open Campus",
   },
 ];

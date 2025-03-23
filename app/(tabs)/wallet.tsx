@@ -13,7 +13,7 @@ import { spacing } from "@/constants/spacings";
 import { Colors } from "@/constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 import Lottie from "lottie-react-native";
-import { nfts } from "@/constants/data";
+import { friends, nfts, tokens } from "@/constants/data";
 import { Image } from "expo-image";
 
 const { width } = Dimensions.get("window");
@@ -27,6 +27,7 @@ const wallet = () => {
         style={{
           flex: 1,
         }}
+        showsVerticalScrollIndicator={false}
       >
         <View
           style={{
@@ -361,12 +362,164 @@ const wallet = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View
-            style={{
-              marginTop: 8,
-            }}
-          >
-            <Text>Assets here</Text>
+          <View>
+            {viewAsset === "tokens" ? (
+              <View
+                style={{
+                  marginTop: 8,
+                }}
+              >
+                {tokens.map((token, index) => (
+                  <View
+                    key={index}
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        gap: 8,
+                        alignItems: "center",
+                        marginVertical: 6,
+                      }}
+                    >
+                      <Image
+                        source={token.image}
+                        contentFit="cover"
+                        transition={1000}
+                        style={{
+                          width: 40,
+                          height: 40,
+                          borderRadius: 20,
+                        }}
+                      />
+                      <View style={{}}>
+                        <Text
+                          style={{
+                            fontFamily: "WorkSansRegular",
+                            fontSize: 16,
+                          }}
+                        >
+                          {token.name}
+                        </Text>
+                        <Text
+                          style={{
+                            fontFamily: "WorkSansRegular",
+                            fontSize: 12,
+                          }}
+                        >
+                          {token.network}
+                        </Text>
+                      </View>
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: "column",
+                        alignItems: "flex-end",
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontFamily: "WorkSansSemibold",
+                          fontSize: 14,
+                        }}
+                      >
+                        KES {token.balanceKES.toLocaleString()}
+                      </Text>
+                      <Text
+                        style={{
+                          fontFamily: "WorkSansRegular",
+                          fontSize: 12,
+                        }}
+                      >
+                        {token.balance}
+                      </Text>
+                    </View>
+                  </View>
+                ))}
+              </View>
+            ) : (
+              <View
+                style={{
+                  marginTop: 8,
+                }}
+              >
+                {friends.map((friend, index) => (
+                  <View
+                    key={index}
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        gap: 8,
+                        alignItems: "center",
+                        marginVertical: 6,
+                      }}
+                    >
+                      <Image
+                        source={friend.image}
+                        contentFit="contain"
+                        transition={1000}
+                        style={{
+                          width: 40,
+                          height: 40,
+                          borderRadius: 20,
+                        }}
+                      />
+                      <View style={{}}>
+                        <Text
+                          style={{
+                            fontFamily: "WorkSansRegular",
+                            fontSize: 16,
+                          }}
+                        >
+                          {friend.name}
+                        </Text>
+                        <Text
+                          style={{
+                            fontFamily: "WorkSansRegular",
+                            fontSize: 12,
+                          }}
+                        >
+                          {friend.category}
+                        </Text>
+                      </View>
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: "column",
+                        alignItems: "flex-end",
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontFamily: "WorkSansSemibold",
+                          fontSize: 14,
+                        }}
+                      >
+                        {friend.iq === 0 ? "" : `IQ ${friend.iq}`}
+                      </Text>
+                      <Text
+                        style={{
+                          fontFamily: "WorkSansRegular",
+                          fontSize: 12,
+                        }}
+                      >
+                        {friend.iq === 0 ? "" : "$0.1 / token"}
+                      </Text>
+                    </View>
+                  </View>
+                ))}
+              </View>
+            )}
           </View>
         </View>
       </ScrollView>

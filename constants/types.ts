@@ -31,6 +31,8 @@ export interface ContinueLearning {
 export interface Friend {
   name: string;
   image: string;
+  iq: number;
+  category: string;
 }
 
 export interface Option {
@@ -140,6 +142,7 @@ export interface NFT {
 export interface Token {
   name: string;
   balance: number;
+  image: string;
   network: string;
   balanceUSD: number;
   balanceKES: number;
